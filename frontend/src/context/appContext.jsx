@@ -1,40 +1,40 @@
-'use client';
-const { useRouter } = require("next/navigation");
-const { createContext, useState, useContext } = require("react");
+// 'use client';
+// const { useRouter } = require("next/navigation");
+// const { createContext, useState, useContext } = require("react");
 
-const AppContext = createContext();
+// const AppContext = createContext();
 
-export const AppProvider = ({ children }) => {
-  const router = useRouter();
+// export const AppProvider = ({ children }) => {
+//   const router = useRouter();
 
-  const [currentUser, setCurrentUser] = useState(
-    JSON.parse(localStorage.getItem("user"))
-  );
+//   const [currentUser, setCurrentUser] = useState(
+//     JSON.parse(localStorage.getItem("user"))
+//   );
 
-  const [loggedIn, setLoggedIn] = useState(currentUser !== null);
+//   const [loggedIn, setLoggedIn] = useState(currentUser !== null);
 
-  const logout = () => {
-    setCurrentUser(null);
-    localStorage.removeItem("user");
-    setLoggedIn(false);
-    router.push("/login");
-  };
+//   const logout = () => {
+//     setCurrentUser(null);
+//     localStorage.removeItem("user");
+//     setLoggedIn(false);
+//     router.push("/login");
+//   };
 
-  return (
-    <AppContext.Provider
-      value={{
-        currentUser,
-        setCurrentUser,
-        loggedIn,
-        setLoggedIn,
-        logout,
-      }}
-    >
-      {children}
-    </AppContext.Provider>
-  );
-};
+//   return (
+//     <AppContext.Provider
+//       value={{
+//         currentUser,
+//         setCurrentUser,
+//         loggedIn,
+//         setLoggedIn,
+//         logout,
+//       }}
+//     >
+//       {children}
+//     </AppContext.Provider>
+//   );
+// };
 
 
-const useAppContext = () => useContext(AppContext);
-export default useAppContext;
+// const useAppContext = () => useContext(AppContext);
+// export default useAppContext;

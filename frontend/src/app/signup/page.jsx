@@ -63,8 +63,8 @@ const SignUp = () => {
     return (
         <>
             <div className='font-mono'>
-                <div className='py-20 bg-[url("/ai-bg-23.jpg")] bg-cover flex justify-center items-center'>
-                    <div className='border bg-[] shadow-md rounded-xl w-1/3 flex justify-center items-center py-14 px-20'>
+                <div className='py-24 md:py-16 bg-[url("/ai-bg-23.jpg")] bg-cover flex justify-center items-center'>
+                    <div className='border bg-[] shadow-md rounded-xl w-5/6 md:w-1/3 flex justify-center items-center py-10 md:py-16 px-8 md:px-20'>
                         <form onSubmit={signupForm.handleSubmit}>
                             <h2 className='pb-10 text-lg text-white'>Register Here</h2>
                             <div className='mb-3 flex items-center pl-4 bg-white rounded-full'>
@@ -128,9 +128,9 @@ const SignUp = () => {
                                     type="checkbox"
                                     class='accent-[#661557]'
                                 />
-                                <span className='font-mono pl-2 text-white'>By sign up, you agree to our Terms, Policy & Cookies.</span>
+                                <span className='font-mono pl-2 text-sm text-white'>By sign up, you agree to our Terms, Policy & Cookies.</span>
                             </div>
-                            <div className='mt-5'>
+                            <div className='mt-6'>
                             <button className='bg-white text-center w-full p-3 rounded-lg shadow-lg shadow-[#3e363e] hover:border hover:border-[#7d316f]'>Get Started</button>
 
                             </div>

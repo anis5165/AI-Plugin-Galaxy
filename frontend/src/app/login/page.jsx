@@ -1,5 +1,5 @@
 'use client';
-import React from 'react'
+import React, { useState } from 'react'
 import { FaUser } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import Link from 'next/link';
@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { useRouter } from 'next/navigation'
 import toast from 'react-hot-toast';
-import useAppContext from '@/context/appContext'
+// import useAppContext from '@/context/appContext'
 
 
 
@@ -23,13 +23,13 @@ const LoginSchema = Yup.object().shape({
         .matches(/[A-Z]/, 'password must contain atleat one uppercase letter')
         .matches(/[0-9]/, 'password must contain atleast one number')
         .matches(/[!@#$%^&*(){/}|[\]:"'';,.?]/, 'password must contain atleast one character')
-        .required('password is incorrect')
+        .required('password is required')
 })
 
 
 const Login = () => {
     
-    const {setLoggedIn, setCurrentUser} = useAppContext();
+    const {setLoggedIn, setCurrentUser} = useState();
 
     const router = useRouter()
   
@@ -63,10 +63,10 @@ const Login = () => {
     return (
         <>
             <div className='font-mono'>
-                <div className='py-16 bg-[url("/ai-bg-23.jpg")] bg-cover flex justify-center items-center'>
-                    <div className='border bg-[] shadow-md rounded-xl w-1/3 flex justify-center items-center py-16 px-20'>
+                <div className='py-24 md:py-16 min-h-full bg-[url("/ai-bg-23.jpg")] bg-cover flex justify-center items-center'>
+                    <div className='border bg-[] shadow-md rounded-xl w-5/6 md:w-1/3 flex justify-center items-center py-10 md:py-16 px-8 md:px-20'>
                         <form onSubmit={loginForm.handleSubmit}>
-                            <h2 className='pb-10 text-lg text-white'>Sign In Here</h2>
+                            <h2 className='pb-10 text-xl md:text-lg text-white'>Sign In Here</h2>
                             <div className='flex items-center pl-4 mb-3 bg-white rounded-full'>
                                 <label htmlFor=""
                                     className='inline-block pr-6 border-r border-gray-50 w-5'
@@ -110,12 +110,12 @@ const Login = () => {
                                     type="checkbox"
                                     className='accent-[#a82d91]'
                                 />
-                                <span className='font-mono pl-2 text-white'>By sign up, you agree to our Terms, Policy & Cookies.</span>
+                                <span className='font-mono text-sm pl-2 text-white'>By sign up, you agree to our Terms, Policy & Cookies.</span>
                             </div>
-                            <div className='mt-5'>
+                            <div className='mt-6'>
                                 <button className='bg-white text-center w-full p-3 rounded-lg shadow-lg shadow-[#3e363e] hover:border hover:border-[#000000]'>Get Started</button>
                             </div>
-                            <div className='pt-5'>Don't have an account? <Link href="/signup" className='text-white'>SignUp Here</Link></div>
+                            <div className='pt-5 text-white text-sm md:text-lg md:text-black'>Don't have an account? <Link href="/signup" className='text-[#d49dca] md:text-white'>SignUp Here</Link></div>
                         </form>
 
                     </div>
