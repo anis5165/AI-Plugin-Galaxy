@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { useRouter } from 'next/navigation'
 import toast from 'react-hot-toast';
-// import useAppContext from '@/context/appContext'
+import useAppContext from '@/context/appContext'
 
 
 
@@ -29,7 +29,7 @@ const LoginSchema = Yup.object().shape({
 
 const Login = () => {
     
-    const {setLoggedIn, setCurrentUser} = useState();
+    const {setLoggedIn, setCurrentUser} = useAppContext();
 
     const router = useRouter()
   

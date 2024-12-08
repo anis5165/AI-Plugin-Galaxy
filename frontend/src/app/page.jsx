@@ -2,7 +2,7 @@
 import React from 'react'
 import Link from 'next/link';
 import Footer from "./footer";
-import { Slide, Fade } from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
 
 const Home = () => {
   return (

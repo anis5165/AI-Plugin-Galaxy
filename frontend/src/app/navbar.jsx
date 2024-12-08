@@ -4,7 +4,7 @@ import { useState } from 'react';
 import useAppContext from '@/context/appContext';
 
 export const Navbar = () => {
-  const { loggedIn, logout } = useState(); // Adjusted: Properly fetch `loggedIn` and `logout` from context
+  const { loggedIn, logout } = useAppContext(); // Adjusted: Properly fetch `loggedIn` and `logout` from context
   const [active, setActive] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); // State for dropdown menu
 
