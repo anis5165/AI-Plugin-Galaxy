@@ -14,7 +14,7 @@ const Footer = () => {
             <footer className='bg-gradient-to-t from-black to-[#0E012D]
              text-white'>
                 <div className='pt-5 px-8'>
-                    <div className='flex flex-wrap md:flex-nowrap justify-between items-center lg:px-24 md:px-5 md:py-5'>
+                    <div className='flex flex-wrap md:flex-nowrap justify-between items-center lg:px-24 md:px-5 md:py-10'>
                         <div className='hidden sm:block w-36'>
                             <img src="/logo12.png" width="" alt="" />
                         </div>
