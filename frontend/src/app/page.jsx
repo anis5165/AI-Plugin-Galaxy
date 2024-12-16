@@ -4,11 +4,12 @@ import Link from 'next/link';
 import Footer from "./footer";
 import { Slide } from "react-awesome-reveal";
 import { Fade } from "react-awesome-reveal";
+import Navbar from './navbar';
 
 const Home = () => {
   return (
     <>
-
+      <Navbar />
       <div className='bg-[url("/ai-bg.jpg")] bg-cover text-white font-mono'>
         {/* hero section  */}
         <div className=' text-white '>

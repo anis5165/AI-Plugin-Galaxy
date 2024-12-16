@@ -119,7 +119,7 @@ const SignUp = () => {
                                     onChange={signupForm.handleChange}
                                     value={signupForm.values.password}
                                     className='w-full pl-4 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
-                                    placeholder='Password'
+                                    placeholder='Create Password'
                                 />
                             </div>
                             <div className='inline-block pt-3'>

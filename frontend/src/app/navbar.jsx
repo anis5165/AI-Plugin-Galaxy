@@ -24,9 +24,8 @@ export const Navbar = () => {
           <span className="text-white text-3xl">☰</span> {/* Simple hamburger icon */}
         </button>
         <div
-          className={`${
-            active ? 'rounded-xl' : 'hidden'
-          } w-full lg:inline-flex lg:flex-grow lg:w-auto`}
+          className={`${active ? 'rounded-xl' : 'hidden'
+            } w-full text-center lg:inline-flex lg:flex-grow lg:w-auto`}
         >
           <div className="gap-4 lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
             <Link
@@ -42,37 +41,13 @@ export const Navbar = () => {
             >
               About Us
             </Link>
+            <Link
+              href="/extensionss"
+              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center hover:text-gray-500"
+            >
+              Extensions
+            </Link>
 
-            <div className="relative">
-              <button
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center hover:text-gray-500"
-                onClick={toggleMenu}
-              >
-                Extensions
-              </button>
-              {menuOpen && (
-                <div className="absolute bg-[#1E013D] text-white rounded shadow-lg mt-2">
-                  <Link
-                    href="/extensionss/feature1"
-                    className="block px-4 py-2 hover:bg-gray-700"
-                  >
-                    Feature 1
-                  </Link>
-                  <Link
-                    href="/extensionss/feature2"
-                    className="block px-4 py-2 hover:bg-gray-700"
-                  >
-                    Feature 2
-                  </Link>
-                  <Link
-                    href="/extensionss/feature3"
-                    className="block px-4 py-2 hover:bg-gray-700"
-                  >
-                    Feature 3
-                  </Link>
-                </div>
-              )}
-            </div>
 
             <Link
               href="/contactus"

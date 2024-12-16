@@ -1,19 +1,18 @@
-
-import "./globals.css";
-// import Navbar from "./navbar";
-import { AppProvider } from "@/context/appContext";
+'use client';
+// import { AppProvider } from "@/context/appContext";
 import { Toaster } from "react-hot-toast";
+import Sidebar from "./sidebar";
+
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-      >
-        <AppProvider>
-        {/* <Navbar/> */}
+      <body>
+        {/* <AppProvider> */}
+        <Sidebar/>
         <Toaster position="top-center"/>
         {children}
-        </AppProvider>
+        {/* </AppProvider> */}
       </body>
     </html>
   );
