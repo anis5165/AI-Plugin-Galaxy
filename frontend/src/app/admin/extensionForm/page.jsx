@@ -32,7 +32,7 @@ const DocumenForm = () => {
 
     return (
         <>
-            <div className='font-mono'>
+            <div className='ml-64 font-mono'>
                 <div className='py-16 min-h-screen bg-[url("/ai-bg-23.jpg")] bg-cover flex justify-center items-center'>
                     <div className='border bg-[] shadow-md rounded-xl w-1/3 flex justify-center items-center py-16 px-20'>
                         <form onSubmit={documenForms.handleSubmit}>

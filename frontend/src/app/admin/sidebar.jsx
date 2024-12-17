@@ -10,11 +10,11 @@ const Sidebar = () => {
         <div className="min-h-screen">
           <aside className="bg-gradient-to-br from-gray-800 to-gray-900 -translate-x-80 fixed inset-0 z-50 w-72 transition-transform duration-300 xl:translate-x-0">
             <div className="relative border-b border-white/20  font-[sans-serif]">
-              <a className="flex items-center gap-4 py-6 px-8" href="#/">
+              <Link className="flex items-center gap-4 py-6 px-8" href="#/">
                 <h6 className="block antialiased tracking-normal font-[sans-serif] text-xl font-semibold leading-relaxed text-white">
                   Admin Dashboard
                 </h6>
-              </a>
+              </Link>
               <button
                 className="middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-white hover:bg-white/10 active:bg-white/30 absolute right-0 top-0 grid rounded-br-none rounded-tl-none xl:hidden"
                 type="button"
@@ -41,7 +41,7 @@ const Sidebar = () => {
             <div className="m-4  font-[sans-serif]">
               <ul className="mb-4 flex flex-col gap-1">
                 <li>
-                  <a aria-current="page" className="active" href="/admin/dashboard">
+                  <Link aria-current="page" className="active" href="/admin/dashboard">
                     <button
                       className="middle none font-[sans-serif] font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize"
                       type="button"
@@ -60,10 +60,10 @@ const Sidebar = () => {
                         dashboard
                       </p>
                     </button>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="" href="/admin/manageUser">
+                  <Link className="" href="/admin/manageUser">
                     <button
                       className="middle  font-[sans-serif] none font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                       type="button"
@@ -85,10 +85,10 @@ const Sidebar = () => {
                         manage User
                       </p>
                     </button>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="" href="/admin/fileUploading">
+                  <Link className="" href="/admin/fileUploading">
                     <button
                       className="middle none  font-[sans-serif] font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                       type="button"
@@ -110,7 +110,7 @@ const Sidebar = () => {
                         Upload File
                       </p>
                     </button>
-                  </a>
+                  </Link>
                   <Link className="" href="/admin/extensionForm">
                     <button
                       className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
@@ -134,7 +134,7 @@ const Sidebar = () => {
                       </p>
                     </button>
                   </Link>
-                  <a className="" href="/user/browse">
+                  <Link className="" href="/user/browse">
                     <button
                       className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                       type="button"
@@ -156,7 +156,7 @@ const Sidebar = () => {
                         browse Product
                       </p>
                     </button>
-                  </a>
+                  </Link>
                 </li>
               </ul>
 
@@ -167,7 +167,7 @@ const Sidebar = () => {
                   </p>
                 </li>
                 <li>
-                  <a className="" href="/user/login">
+                  <Link className="" href="/user/login">
                     <button
                       className="middle none font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                       type="button"
@@ -189,10 +189,10 @@ const Sidebar = () => {
                         sign in
                       </p>
                     </button>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="" href="/user/signUp">
+                  <Link className="" href="/user/signUp">
                     <button
                       className="middle  font-[sans-serif] font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                       type="button"
@@ -210,7 +210,7 @@ const Sidebar = () => {
                         sign up
                       </p>
                     </button>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -226,4 +226,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Sidebar;

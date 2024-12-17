@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className='bg-[url("/ai-bg.jpg")] bg-cover text-white font-mono'>
+      <div className='bg-[url("/ai-bg.jpg")] md:px-20 bg-cover text-white font-mono'>
         {/* hero section  */}
         <div className=' text-white '>
           <Slide duration={400} direction='up' delay={100}>
@@ -24,7 +24,7 @@ const Home = () => {
 
 
         {/* about us  */}
-        <div>
+        <div className=''>
           <div className='pb-24 md:py-20'>
 
             <div className='md:gap-24 md:flex md:justify-between md:items-center px-10 md:px-24'>

@@ -22,20 +22,20 @@ const Footer = () => {
                         </div>
                         <div className=''>
                             <h2 className='mb-2 text-lg md:text-3xl'>Contact us</h2>
-                            <h3 className='text-gray-300 text-sm py-4 mb-1 hover:text-gray-100'><span>+91 97297 06784</span></h3>
+                            <h3 className='text-gray-300 text-sm py-6 mb-1 hover:text-gray-100'><span>+91 97297 06784</span></h3>
                             <h3 className='text-gray-300 text-sm mb-1 hover:text-gray-100'><span>ryan51@tomorjerry.com</span></h3>
-                            <h3 className='text-gray-300 text-sm py-4 mb-1 hover:text-gray-100'><span>Lucknow, 226001</span></h3>
+                            <h3 className='text-gray-300 text-sm py-6 mb-1 hover:text-gray-100'><span>Lucknow, 226001</span></h3>
                             <h3 className='text-gray-300 text-sm mb-1 hover:text-gray-100'><span>Mon-Fri: 10-20, Sun: 12-16</span></h3>
                         </div>
                         <div className='py-5 md:py-0 md:pl-2'>
                             <h2 className='mb-2 text-lg md:text-2xl'>Our Services</h2>
-                            <h4 className='text-gray-300 text-sm py-4 mb-1 hover:text-gray-100'><Link href="/">Home</Link></h4>
+                            <h4 className='text-gray-300 text-sm py-6 mb-1 hover:text-gray-100'><Link href="/">Home</Link></h4>
                             <h4 className='text-gray-300 text-sm mb-1 hover:text-gray-100'><Link href="/about">About</Link></h4>
-                            <h4 className='text-gray-300 text-sm py-4 mb-1 hover:text-gray-100'><Link href="/contactus">Contact</Link></h4>
+                            <h4 className='text-gray-300 text-sm py-6 mb-1 hover:text-gray-100'><Link href="/contactus">Contact</Link></h4>
                             <h4 className='text-gray-300 text-sm mb-1 hover:text-gray-100'><Link href="/extensionss">extension</Link></h4>
                         </div>
                         <div className='pt-2'>
-                            <h2 className='mb-6 text-lg md:text-2xl'>Newsletter</h2>
+                            <h2 className='mb-12 text-lg md:text-2xl'>Newsletter</h2>
                             <div className='flex py-4 gap-5'>
                                 <input
                                     type="email"
@@ -54,7 +54,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className='bg-gray-950 text-sm text-center p-4'>
-                        <div className=''>Copyright &copy; 2024 All rights reserved | Block is made with by <Link href="/"><span className='text-[#a7238f] hover:text-[#581c4d]'>AI-Plugin-Galaxy</span></Link></div>
+                        <div className='pb-5'>Copyright &copy; 2024 All rights reserved | Block is made with by <Link href="/"><span className='text-[#a7238f] hover:text-[#581c4d]'>AI-Plugin-Galaxy</span></Link></div>
                     </div>
                 </div>
                 <div className='fixed right-10 bottom-16 z-10-'>
