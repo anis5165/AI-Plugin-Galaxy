@@ -17,7 +17,8 @@ const Home = () => {
             <div className='py-40 md:py-40 flex flex-col justify-center items-center'>
               <img src="/logo12.png" className='h-32 w-32' />
               <h1 className='text-2xl font-mono font-semibold text-center md:text-5xl'>AI PLUGIN GALAXY</h1>
-              <h3 className='text-slate-300 text-sm md:text-xl pt-3 font-mono px-10 md:px-52 text-center'>AI Plugin Galaxy is an extension hub that centralizes a wide range of AI plugins, enabling seamless integration and enhanced functionality for AI-powered applications. It offers developers and users an ecosystem to discover, install, and manage tools efficiently.</h3>
+              <h3 className='text-slate-300 text-sm md:text-xl pt-3 font-mono px-10 md:px-52 text-center'>Welcome to the documentation for AI Extensions! This guide will help you integrate our AI components into your own projects seamlessly. Our components are designed to be plug-and-play, requiring minimal setup.
+              </h3>
             </div>
           </Slide>
         </div>

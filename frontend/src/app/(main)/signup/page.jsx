@@ -4,7 +4,7 @@ import { FaUser } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaUserPlus } from "react-icons/fa";
 import * as Yup from 'yup';
-import { Formik, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';

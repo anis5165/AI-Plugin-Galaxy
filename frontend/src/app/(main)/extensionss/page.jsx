@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { CiSearch } from "react-icons/ci";
+
 
 const Documentation = () => {
     const [extensionData, setextensionData] = useState([]);
@@ -24,8 +26,15 @@ const Documentation = () => {
     return (
         <div className='bg-[url("/ai-bg-2.jpg")] bg-cover'>
             <div className='mx-10 py-8'>
-                <div className='font-semibold'>
-                    <h2 className='text-6xl text-white'>Extensions 24</h2>
+                <div className='text-center font-semibold mt-20 my-5'>
+                    <h2 className='text-8xl text-white'>Extensions 24</h2>
+                </div>
+                <div className='flex flex-cols gap-3 justify-center items-center mb-16'>
+                    <input type="search" 
+                        className='py-3 pl-4 pr-28 rounded-lg outline-none'
+                        placeholder='Search Extension'
+                    />
+                    <button className='bg-blue-600 py-3 px-4 rounded-lg text-white'><CiSearch size={25}/></button>
                 </div>
                 <div className='flex flex-col justify-between items-center md:mx-10'>
                     {extensionData.map((exten) => (
