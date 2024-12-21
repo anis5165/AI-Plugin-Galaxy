@@ -23,6 +23,14 @@ const Documentation = () => {
         fetchExtensionData();
     }, []);
 
+
+    const applysearch = (e) => {
+        const value = e.target.value;
+        setextensionData(extensionData.filter((extensionData)=> {
+            return (extensionData.extensionName.toLowerCase().includes(value.toLowerCase()))
+        }))
+    }
+    
     return (
         <div className='bg-[url("/ai-bg-2.jpg")] bg-cover'>
             <div className='mx-10 py-8'>
@@ -31,8 +39,10 @@ const Documentation = () => {
                 </div>
                 <div className='flex flex-cols gap-3 justify-center items-center mb-16'>
                     <input type="search" 
+                        id='exten'
                         className='py-3 pl-4 pr-28 rounded-lg outline-none'
                         placeholder='Search Extension'
+                        onChange={applysearch}
                     />
                     <button className='bg-blue-600 py-3 px-4 rounded-lg text-white'><CiSearch size={25}/></button>
                 </div>
