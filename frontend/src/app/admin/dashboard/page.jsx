@@ -4,7 +4,7 @@ const Dashboard = () => {
   return (
     <>
       <div className='ml-64'>
-        <div className='text-[#eeeee4] font-mono bg-[url("/ai-bg-2.jpg")] bg-cover'>
+        <div className='text-[#eeeee4] max-h-screen fixed font-mono bg-[url("/ai-bg-2.jpg")] bg-cover'>
           <div className='flex flex-col justify-center items-center min-h-screen'>
             <h2 className='text-8xl font-bold '>welcome</h2>
             <h3 className='text-4xl '>To The</h3>

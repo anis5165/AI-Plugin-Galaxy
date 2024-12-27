@@ -35,8 +35,8 @@ const Manageuser = () => {
     }
 
     return (
-        <div className='ml-72'>
-            <div className='lg:max-w-[90%] mx-auto py-10'>
+        <div className='ml-80'>
+            <div className='lg:max-w-[90%] fixed w-3/4 mx-auto py-10'>
                 <div className='border rounded-xl shadow-lg p-8'>
                     <h1 className='text-center mb-7 font-bold text-3xl'>Manage User</h1>
                     <hr />

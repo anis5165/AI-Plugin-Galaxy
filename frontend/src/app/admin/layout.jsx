@@ -8,8 +8,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {/* <AppProvider> */}
+        
+        {children} 
         <Sidebar/>
-        {children}
         {/* </AppProvider> */}
       </body>
     </html>
