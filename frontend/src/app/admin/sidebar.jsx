@@ -8,7 +8,7 @@ const Sidebar = () => {
       <>
         {/* component */}
         <div className="min-h-screen">
-          <aside className="bg-gradient-to-br from-gray-800 to-gray-900 -translate-x-80 fixed inset-0 z-50 w-72 transition-transform duration-300 xl:translate-x-0">
+          <aside className="bg-[] -translate-x-80 fixed inset-0 z-50 w-72 transition-transform duration-300 xl:translate-x-0">
             <div className="relative border-b border-white/20  font-[sans-serif]">
               <Link className="flex items-center gap-4 py-6 px-8" href="#/">
                 <h6 className="block antialiased tracking-normal font-[sans-serif] text-xl font-semibold leading-relaxed text-white">
@@ -121,7 +121,7 @@ const Sidebar = () => {
                   </p>
                 </li>
                 <li>
-                  <Link className="" href="/user/login">
+                  <Link className="" href="/(main)/login">
                     <button
                       className="middle none font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                       type="button"
@@ -146,7 +146,7 @@ const Sidebar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="" href="/user/signUp">
+                  <Link className="" href="/signup">
                     <button
                       className="middle  font-[sans-serif] font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                       type="button"
