@@ -9,7 +9,7 @@ const ContactRouter = require('./routers/contact')
 const ExtensionRouter = require('./routers/extension')
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:3000']
+    origin: ['http://localhost:3001']
 }))
 app.use('/user',UserRouter)
 app.use('/contact',ContactRouter)
