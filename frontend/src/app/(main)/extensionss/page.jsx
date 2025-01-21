@@ -47,8 +47,8 @@ const Documentation = () => {
                     <button className='bg-blue-600 py-3 px-4 rounded-lg text-white'><CiSearch size={25}/></button>
                 </div>
                 <div className='flex flex-col justify-between items-center md:mx-10'>
-                    {extensionData.map((exten) => (
-                    <div className='md:px-20 border bg-[] w-full md:w-4/5 shadow-xl my-3 rounded-2xl p-8 md:p-10 mt-10'>
+                    {extensionData.map((exten, index) => (
+                    <div key={index} className='md:px-20 border bg-[] w-full md:w-4/5 shadow-xl my-3 rounded-2xl p-8 md:p-10 mt-10'>
                         <div className='md:flex md:justify-between'>
                             <div>
                                 <h3 className='text-slate-100'>Extension</h3>
@@ -57,7 +57,7 @@ const Documentation = () => {
                         </div>
                         <p className='pt-8 md:pt-12 text-slate-400'>{exten.details}</p>
                         <div className='pt-6'>
-                            <button className='bg-white text-center py-3 px-8 rounded-lg shadow-lg shadow-[#cbc3cb] hover:border hover:border-[#ebe8eb]'><Link href="/documentation\[id]">View Documentation</Link></button>
+                            <button className='bg-white text-center py-3 px-8 rounded-lg shadow-lg shadow-[#cbc3cb] hover:border hover:border-[#ebe8eb]'><Link href="/documentations/objectDetectionDocumentation">View Documentation</Link></button>
                         </div>
                     </div>
                     ))}
