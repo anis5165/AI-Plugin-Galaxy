@@ -38,24 +38,37 @@ const Login = () => {
         email:'',
         password:'',
       },
-      onSubmit: (values, {resetForm}) => {
-        console.log(values)
-        
-        axios.post('http://localhost:5000/user/authenticate', values)
-        .then((response) => {
-          console.log(response.status)
-          localStorage.setItem('user', JSON.stringify(response.data))
-          setLoggedIn(true)
-          resetForm()
-          toast.success('Login successfully')
-          router.push('/')
-  
-        }).catch((err) => {
-          console.log(err)
-          toast.error('Invalid Credentials')
+      onSubmit: async (values, action) => {
+        console.log(values);
+
+        const res = await fetch('http://localhost:5000/user/authenticate', {
+            method: 'POST',
+            body: JSON.stringify(values),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
-  
-      },
+        console.log(res.status);
+        action.resetForm();
+
+        if (res.status === 200) {
+            toast.success("Login Successfull")
+            setLoggedIn(true);
+
+            const data = await res.json();
+            localStorage.setItem('isloggedin', true);
+            if(data.role === 'admin'){
+                localStorage.setItem('admin', JSON.stringify(data));
+                router.push('/admin/dashboard');
+            }else{
+                localStorage.setItem('user', JSON.stringify(data));
+                router.push('/');
+            }
+        } else if (res.status === 400
+            ) {
+            toast.error("Something went wrong")
+        }
+        },
       validationSchema: LoginSchema
     })
 

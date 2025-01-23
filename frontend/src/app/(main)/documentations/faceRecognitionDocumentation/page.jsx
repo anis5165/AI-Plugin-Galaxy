@@ -4,6 +4,9 @@ import { useParams } from 'next/navigation';
 import { CodeBlock } from "react-code-blocks";
 import { FaCopy } from 'react-icons/fa';
 import copy from 'copy-to-clipboard';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+
 
 const FRDocumentation = () => {
 
@@ -15,6 +18,15 @@ const FRDocumentation = () => {
     keywordColor: "#0077ff",
 
   }
+
+  const router = useRouter()
+  
+    useEffect(() => {
+      if (!localStorage.getItem('user')) {
+        router.push('/login');
+        return
+      }
+    }, [])
 
   const code = '<script src="main.js"></script>';
   const language = 'javascript';

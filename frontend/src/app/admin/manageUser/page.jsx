@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const Manageuser = () => {
 
@@ -33,6 +34,16 @@ const Manageuser = () => {
                 toast.error('Failed to delete user')
             });
     }
+
+
+    const router = useRouter()
+
+    useEffect(() => {
+        if (!localStorage.getItem('admin')) {
+            router.push('/login');
+            return
+        }
+    }, [])
 
     return (
         <div>

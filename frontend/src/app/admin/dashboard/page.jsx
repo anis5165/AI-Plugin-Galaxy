@@ -1,6 +1,17 @@
-import React from 'react'
+"use client"
+import { useRouter } from 'next/navigation';
+import React, { useEffect } from 'react'
 
 const Dashboard = () => {
+const router = useRouter()
+
+  useEffect(() => {
+    if (!localStorage.getItem('admin')) {
+      router.push('/login');
+      return
+    }
+  }, [])
+
   return (
     <>
       <div className=''>

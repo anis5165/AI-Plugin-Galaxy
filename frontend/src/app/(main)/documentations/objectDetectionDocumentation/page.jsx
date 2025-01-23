@@ -4,6 +4,7 @@ import { useParams } from 'next/navigation';
 import { CopyBlock, nord } from 'react-code-blocks';
 import { FaCopy } from 'react-icons/fa';
 import copy from 'copy-to-clipboard';
+import { useRouter } from 'next/navigation';
 
 const ODDocumentation = () => {
 
@@ -15,6 +16,17 @@ const ODDocumentation = () => {
     keywordColor: "#0077ff",
 
   }
+
+
+    const router = useRouter();
+  
+    useEffect(() => {
+
+      if (!localStorage.getItem('user')) {
+        router.push('/login');
+        return
+      }
+    }, [])
 
   const code = '<script src="main.js"></script>';
   const language = 'javascript';

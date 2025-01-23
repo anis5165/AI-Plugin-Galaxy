@@ -2,25 +2,21 @@
 import React from 'react'
 import Link from 'next/link';
 import Footer from "./footer";
-import { Slide } from "react-awesome-reveal";
-import { Fade } from "react-awesome-reveal";
 import Navbar from './navbar';
 
 const Home = () => {
   return (
     <>
       <Navbar />
-        <div className='bg-[url("/ai-bg.jpg")] bg-cover md:px-20 text-white font-mono'>
+        <div className='bg-[url("/ai-bg.jpg")] bg-cover md:px-20 text-white '>
           {/* hero section  */}
           <div className=' text-white '>
-            <Slide duration={400} direction='up' delay={100}>
               <div className='py-40 md:py-40 flex flex-col justify-center items-center'>
                 <img src="/logo12.png" className='h-32 w-32' />
-                <h1 className='text-2xl font-mono font-semibold text-center md:text-5xl'>AI PLUGIN GALAXY</h1>
-                <h3 className='text-slate-300 text-sm md:text-xl pt-3 font-mono px-10 md:px-52 text-center'>Welcome to the documentation for AI Extensions! This guide will help you integrate our AI components into your own projects seamlessly. Our components are designed to be plug-and-play, requiring minimal setup.
+                <h1 className='text-2xl   font-semibold text-center md:text-5xl'>AI PLUGIN GALAXY</h1>
+                <h3 className='text-slate-300 text-sm md:text-xl pt-3   px-10 md:px-52 text-center'>Welcome to the documentation for AI Extensions! This guide will help you integrate our AI components into your own projects seamlessly. Our components are designed to be plug-and-play, requiring minimal setup.
                 </h3>
               </div>
-            </Slide>
           </div>
 
 
@@ -31,8 +27,8 @@ const Home = () => {
               <div className='md:gap-24 md:flex md:justify-between md:items-center px-10 md:px-24'>
                 <video src="logo.mp4" autoPlay loop className='hidden md:block'></video>
                 <div className=''>
-                  <h2 className='text-center text-5xl font-semibold font-mono'>ABOUT</h2>
-                  <p className='text-justify font-mono pt-10'>Welcome to AI Plugin Galaxy, your one-stop destination for exploring a universe of cutting-edge AI-powered plugins and extensions. Our platform offers a diverse collection of tools designed to seamlessly integrate with your projects, enhancing functionality and simplifying complex tasks. From object detection and hand gesture recognition to advanced AI-based utilities, we provide solutions that empower developers, creators, and businesses alike.</p> <br />
+                  <h2 className='text-center text-5xl font-semibold  '>ABOUT</h2>
+                  <p className='text-justify   pt-10'>Welcome to AI Plugin Galaxy, your one-stop destination for exploring a universe of cutting-edge AI-powered plugins and extensions. Our platform offers a diverse collection of tools designed to seamlessly integrate with your projects, enhancing functionality and simplifying complex tasks. From object detection and hand gesture recognition to advanced AI-based utilities, we provide solutions that empower developers, creators, and businesses alike.</p> <br />
 
                   <p className='hidden md:block text-justify'> At AI Plugin Galaxy, we are dedicated to delivering innovative, user-friendly, and highly adaptable plugins that harness the power of artificial intelligence. Whether you're building applications, working on interactive systems, or exploring new possibilities in AI, our curated collection is here to fuel your creativity and productivity. </p> <br />
 
@@ -43,25 +39,7 @@ const Home = () => {
             </div>
           </div>
 
-
-          {/* features section  */}
-
-          <div>
-            <div>
-              <div>
-                <div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
           {/* Testimonial */}
-
-
 
           <div>
 
@@ -72,7 +50,6 @@ const Home = () => {
                     <h2 className="text-center text-4xl font-bold tracking-tight text-gray-200 sm:text-5xl">
                       Read trusted reviews from our Collabers
                     </h2>
-                    <Fade duration={2000} cascade>
                       <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 overflow-y-auto">
                         <blockquote className="rounded-lg bg-[] border p-6 shadow-sm sm:p-8">
                           <div className="flex items-center gap-4">
@@ -287,7 +264,6 @@ const Home = () => {
                           </p>
                         </blockquote>
                       </div>
-                    </Fade>
                   </div>
                 </section>
               </div>

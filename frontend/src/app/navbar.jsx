@@ -13,7 +13,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="font-mono bg-[#0E012D] text-white flex items-center flex-wrap px-2 md:px-16">
+      <nav className="bg-[#0E012D] text-white flex items-center flex-wrap px-2 md:px-16">
         <div className="w-24 px-2 md:px-0 animate-pulse">
           <img className="pt-2 h-16 w-16" src="logo12.png" alt="Logo" />
         </div>

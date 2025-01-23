@@ -4,6 +4,8 @@ import { useParams } from 'next/navigation';
 import { CodeBlock } from "react-code-blocks";
 import { FaCopy } from 'react-icons/fa';
 import copy from 'copy-to-clipboard';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const HGDocumentation = () => {
 
@@ -15,6 +17,15 @@ const HGDocumentation = () => {
     keywordColor: "#0077ff",
 
   }
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!localStorage.getItem('user')) {
+      router.push('/login');
+      return
+    }
+  }, [])
 
   const code = '<script src="main.js"></script>';
   const language = 'javascript';
@@ -37,8 +48,8 @@ const HGDocumentation = () => {
                   <h2 className='text-lg'>2.1 Prequisites</h2>
                   <p className='pl-8 md:pl-10 text-[#94A3B8]'>Before you start, make sure you have the following:</p>
                   <p className='pl-8 md:pl-14 text-[#94A3B8]'>(a) A project using HTML, CSS, and JavaScript. <br />
-                  (b) Basic knowledge of React (optional, but recommended). <br />
-                  (c) Internet connection to load the external script.
+                    (b) Basic knowledge of React (optional, but recommended). <br />
+                    (c) Internet connection to load the external script.
                   </p>
                 </div>
               </div>

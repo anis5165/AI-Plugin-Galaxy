@@ -4,6 +4,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { CiSearch } from "react-icons/ci";
+import { useRouter } from 'next/navigation';
 
 
 const Documentation = () => {
@@ -30,6 +31,15 @@ const Documentation = () => {
             return (extensionData.extensionName.toLowerCase().includes(value.toLowerCase()))
         }))
     }
+
+      const router = useRouter();
+    
+      useEffect(() => {
+        if (!localStorage.getItem('user')) {
+          router.push('/login');
+          return
+        }
+      }, [])
     
     return (
         <div className='bg-[url("/ai-bg-2.jpg")] bg-cover'>

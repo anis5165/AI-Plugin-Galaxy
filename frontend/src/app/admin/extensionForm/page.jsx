@@ -1,10 +1,12 @@
 'use client';
-import React from "react";
+import React, { useEffect } from "react";
 import { IoExtensionPuzzle } from "react-icons/io5";
 import { FcViewDetails } from "react-icons/fc";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+
 
 
 
@@ -30,6 +32,14 @@ const DocumenForm = () => {
         },
     })
 
+    const router = useRouter()
+
+    useEffect(() => {
+        if (!localStorage.getItem('admin')) {
+            router.push('/login');
+            return
+        }
+    }, [])
     return (
         <>
             <div className='font-mono'>
