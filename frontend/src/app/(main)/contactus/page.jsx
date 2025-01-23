@@ -1,5 +1,5 @@
 'use client';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaUserPlus } from "react-icons/fa6";
@@ -8,6 +8,7 @@ import toast from 'react-hot-toast';
 import { useFormik } from 'formik';
 import { ImFileText } from "react-icons/im";
 import * as Yup from 'yup';
+import { useRouter } from 'next/navigation';
 
 
 
@@ -50,6 +51,15 @@ const ContactUs = () => {
         },
         validationSchema: ConatctSchema
     })
+
+      const router = useRouter();
+    
+      useEffect(() => {
+        if (!localStorage.getItem('user')) {
+          router.push('/login');
+          return
+        }
+      }, [])
 
     return (
         <>
