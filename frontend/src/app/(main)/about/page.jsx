@@ -6,7 +6,7 @@ const About = () => {
     return (
         <>
             <div>
-                <div className='pb-16 md:py-0 font-mono min-h-screen bg-gradient-to-t from-black to-[#0E012D] bg-cover'>
+                <div className='pb-16 md:py-0 min-h-screen '>
                     <div className=''>
                         <h2 className='text-center py-10 text-white text-xl px-10 md:text-4xl font-bold'>About AI Plugin Galaxy</h2>
                     </div>

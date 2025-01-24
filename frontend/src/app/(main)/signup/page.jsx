@@ -63,7 +63,7 @@ const SignUp = () => {
     return (
         <>
             <div className='font-mono'>
-                <div className='py-24 md:py-16 bg-[url("/ai-bg-23.jpg")] bg-cover flex justify-center items-center'>
+                <div className='py-24 md:py-16 flex justify-center items-center'>
                     <div className='border bg-[] shadow-md rounded-xl w-5/6 md:w-1/3 flex justify-center items-center py-10 md:py-16 px-8 md:px-20'>
                         <form onSubmit={signupForm.handleSubmit}>
                             <h2 className='pb-10 text-lg text-white'>Register Here</h2>

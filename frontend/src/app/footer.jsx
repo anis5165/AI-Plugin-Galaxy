@@ -12,9 +12,8 @@ import FeedbackDialog from './(main)/feedback/feedBack';
 //bg-gradient-to-r from-cyan-500 to-blue-500
 const Footer = () => {
     return (
-        <div className='font-mono'>
-            <footer className='relative bg-gradient-to-t from-black to-[#0E012D]
-             text-white'>
+        <div className=' '>
+            <footer className='relative text-white'>
                 <div className='pt-5 px-8'>
                     <div className='flex flex-wrap md:flex-nowrap justify-between items-center lg:px-24 md:px-5 md:py-10'>
                         <div className='hidden sm:block w-36'>
@@ -53,7 +52,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='bg-gray-950 text-sm text-center p-4'>
+                    <div className=' text-sm text-center p-4'>
                         <div className='pb-5'>Copyright &copy; 2024 All rights reserved | Block is made with by <Link href="/"><span className='text-[#a7238f] hover:text-[#581c4d]'>AI-Plugin-Galaxy</span></Link></div>
                     </div>
                 </div>

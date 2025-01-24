@@ -42,7 +42,7 @@ const Documentation = () => {
       }, [])
     
     return (
-        <div className='bg-[url("/ai-bg-2.jpg")] bg-cover'>
+        <div className=''>
             <div className='mx-10 py-8'>
                 <div className='text-center font-semibold mt-20 my-5'>
                     <h2 className='text-8xl text-white'>Extensions 24</h2>

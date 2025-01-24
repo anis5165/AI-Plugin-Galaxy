@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-        <div className='bg-[url("/ai-bg.jpg")] bg-cover md:px-20 text-white '>
+        <div className=' md:px-20 text-white '>
           {/* hero section  */}
           <div className=' text-white '>
               <div className='py-40 md:py-40 flex flex-col justify-center items-center'>
