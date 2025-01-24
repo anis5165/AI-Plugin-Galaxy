@@ -23,7 +23,7 @@ const FeedbackDialog = () => {
       {/* Feedback Button */}
       <button
         onClick={toggleDialog}
-        className="lg:inline-flex lg:w-auto w-full px-3 py-2 shadow-lg shadow-[#661557] opacity-65 hover:opacity-100 rounded-lg items-center justify-center hover:border hover:border-[#7d316f]"
+        className="lg:inline-flex lg:w-auto w-full px-3 py-2 shadow-lg shadow-[#6463cb] opacity-65 hover:opacity-100 rounded-lg items-center justify-center hover:border hover:border-[#6463cb]"
       >
         <MdOutlineFeedback size={20}/>
       </button>
@@ -45,13 +45,13 @@ const FeedbackDialog = () => {
                 <button
                   type="button"
                   onClick={toggleDialog}
-                  className="lg:inline-flex lg:w-auto w-full px-3 py-2 shadow-lg shadow-[#661557] rounded-lg items-center justify-center hover:border hover:border-[#7d316f]"
+                  className="lg:inline-flex lg:w-auto w-full px-3 py-2 shadow-lg shadow-[#6463cb] rounded-lg items-center justify-center hover:border hover:border-[#6463cb]"
                   >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="lg:inline-flex lg:w-auto w-full px-3 py-2 shadow-lg bg-[#711460] shadow-[#661557] rounded-lg items-center justify-center hover:border hover:border-[#7d316f]"
+                  className="lg:inline-flex lg:w-auto w-full px-3 py-2 shadow-lg bg-[#6463cb] shadow-[#6463cb] rounded-lg items-center justify-center hover:border hover:border-[#6463cb]"
                   >
                   Submit
                 </button>

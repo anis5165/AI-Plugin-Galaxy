@@ -64,8 +64,8 @@ const ContactUs = () => {
     return (
         <>
             <div className='font-mono'>
-                <div className='py-16  flex justify-center items-center'>
-                    <div className='border bg-[] shadow-md rounded-xl w-1/3 flex justify-center items-center py-16 px-16'>
+                <div className='py-16 flex justify-center items-center'>
+                    <div className='border shadow-md rounded-xl md:w-1/3 flex justify-center items-center py-16 px-16'>
                         <form onSubmit={contactusForm.handleSubmit}>
                             <h2 className='pb-10 text-lg text-white'>Conatct us</h2>
                             <div className='flex justify-between items-center gap-3'>

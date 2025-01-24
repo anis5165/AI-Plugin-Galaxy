@@ -47,9 +47,9 @@ const Manageuser = () => {
 
     return (
         <div>
-            <div className='bg-[url("/ai-bg-23.jpg")] min-h-screen fixed bg-cover w-full'>
-                <div className='font-mono bg-[]'>
-                    <div className='lg:max-w-[90%] pl-72 mx-auto  py-36'>
+            <div className='min-h-screen fixed w-full'>
+                <div className='   bg-[]'>
+                    <div className='lg:max-w-[90%] pl-64 mx-auto  py-36'>
                         <div className='border rounded-xl shadow-lg p-8'>
                             <h1 className='text-center mb-7 text-white font-bold text-3xl'>Manage User</h1>
                             <hr />
@@ -61,6 +61,7 @@ const Manageuser = () => {
                                         <th className='p-2 border border-white'>NAME</th>
                                         <th className='p-2 border border-white'>EMAIL</th>
                                         <th className='p-2 border border-white'>PASSWORD</th>
+                                        <th className='p-2 border border-white'>Role</th>
                                         <th colSpan={2}>Actions</th>
                                     </tr>
                                 </thead>
@@ -70,14 +71,15 @@ const Manageuser = () => {
                                         userList.map((user) => {
                                             // key is required for each element in the list to uniquely identify it,if not provided it will throw a warning but will still work
                                             return <tr key={user._id}>
-                                                <td className='p-2 border border-violet-700'>{user._id}</td>
-                                                <td className='p-2 border border-violet-700'>{user.name}</td>
-                                                <td className='p-2 border border-violet-700'>{user.email}</td>
-                                                <td className='p-2 border border-violet-700'>{user.password}</td>
-                                                <td onClick={() => deleteUser(user._id)} className='p-2 border border-violet-700'>
+                                                <td className='p-2 border border-slate-700'>{user._id}</td>
+                                                <td className='p-2 border border-slate-700'>{user.name}</td>
+                                                <td className='p-2 border border-slate-700'>{user.email}</td>
+                                                <td className='p-2 border border-slate-700'>{user.password}</td>
+                                                <td className='p-2 border border-slate-700'>{user.role}</td>
+                                                <td onClick={() => deleteUser(user._id)} className='p-2 border border-slate-700'>
                                                     <button className='bg-red-500 text-white px-4 py-2 rounded-lg'>Delete</button>
                                                 </td>
-                                                <td className='p-2 border border-violet-700'>
+                                                <td className='p-2 border border-slate-700'>
                                                     <Link href={'/updateUser/' + user._id} className='bg-blue-500 text-white px-4 py-2 rounded-lg'>Update</Link>
                                                 </td>
                                             </tr>

@@ -59,14 +59,14 @@ export const Navbar = () => {
             {loggedIn ? (
               <button
                 onClick={logout}
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 shadow-lg shadow-[#661557] rounded-lg items-center justify-center hover:border hover:border-[#7d316f]"
+                className="lg:inline-flex lg:w-auto over w-full px-4 py-2 shadow-lg shadow-[#6463cb] rounded-lg items-center justify-center hover:border hover:border-[#6463cb]"
               >
                 LogOut
               </button>
             ) : (
               <Link
                 href="/login"
-                className="lg:inline-flex lg:w-auto w-full px-3 py-2 shadow-lg shadow-[#661557] rounded-lg items-center justify-center hover:border hover:border-[#7d316f]"
+                className="lg:inline-flex lg:w-auto w-full px-3 py-2 shadow-lg shadow-[#6463cb] rounded-xl items-center justify-center hover:border hover:border-[#6463cb]"
               >
                 Sign In
               </Link>

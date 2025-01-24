@@ -75,7 +75,7 @@ const Login = () => {
 
     return (
         <>
-            <div className='font-mono'>
+            <div className=''>
                 <div className='py-24 md:py-16 min-h-full  flex justify-center items-center'>
                     <div className='border bg-[] shadow-md rounded-xl w-5/6 md:w-1/3 flex justify-center items-center py-10 md:py-16 px-8 md:px-20'>
                         <form onSubmit={loginForm.handleSubmit}>
@@ -94,7 +94,7 @@ const Login = () => {
                                     id='email'
                                     onChange={loginForm.handleChange}
                                     value={loginForm.values.email}
-                                    className='w-full pl-4 pr-6 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
+                                    className='w-full pl-4 pr-6 py-4 font-semibold rounded-r-full focus:outline-none'
                                     placeholder='example@habib.com'
                                 />
                             </div>
@@ -113,7 +113,7 @@ const Login = () => {
                                     id='password'
                                     onChange={loginForm.handleChange}
                                     value={loginForm.values.password}
-                                    className='w-full pl-4 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
+                                    className='w-full pl-4 py-4 font-semibold rounded-r-full focus:outline-none'
                                     placeholder='Password'
                                 />
                             </div>
@@ -121,14 +121,14 @@ const Login = () => {
 
                                 <input
                                     type="checkbox"
-                                    className='accent-[#a82d91]'
+                                    className='accent-[#6463cb]'
                                 />
                                 <span className='font-mono text-sm pl-2 text-white'>By sign up, you agree to our Terms, Policy & Cookies.</span>
                             </div>
                             <div className='mt-6'>
                                 <button className='bg-white text-center w-full p-3 rounded-lg shadow-lg shadow-[#3e363e] hover:border hover:border-[#000000]'>Get Started</button>
                             </div>
-                            <div className='pt-5 text-white text-sm md:text-lg md:text-black'>Don't have an account? <Link href="/signup" className='text-[#d49dca] md:text-white'>SignUp Here</Link></div>
+                            <div className='pt-5 text-white text-sm md:text-lg md:text-black'>Don't have an account? <Link href="/signup" className='text-[#6463cb] md:text-white'>SignUp Here</Link></div>
                         </form>
 
                     </div>

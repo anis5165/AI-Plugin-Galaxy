@@ -5,6 +5,7 @@ import { CopyBlock, nord } from 'react-code-blocks';
 import { FaCopy } from 'react-icons/fa';
 import copy from 'copy-to-clipboard';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 const ODDocumentation = () => {
 
@@ -33,11 +34,11 @@ const ODDocumentation = () => {
 
   return (
     <>
-      <div className='flex items-center justify-center bg-cover bg-[url("/ai-bg.jpg")] w-full'>
-        <div className='lg:w-4/5 font-mono min-h-screen text-white'>
+      <div className='flex items-center justify-center w-full'>
+        <div className='lg:w-4/5     min-h-screen text-white'>
           <div className='px-5 sm:px-14 md:pl-14 md:pr-36'>
             <div className=''>
-              <h2 className='md:pl-20 text-[#d8dbdb] text-3xl sm:text-4xl pt-10 hover:motion-preset-typewriter hover:motion-duration-1500 font-bold'>Getting Started With Object Detection</h2>
+              <h2 className='md:pl-20 text-[#d8dbdb] text-3xl sm:text-4xl pt-10 hover:motion-preset-typewriter hover:motion-duration-1500 text-center font-bold'>Getting Started With Object Detection</h2>
               <h2 className='md:pl-20 pt-16 text-[#d8dbdb] text-xl'><span className='text-xl'>1.</span> Introduction</h2>
               <p className='pl-8 md:pl-28 pt-2 text-[#94A3B8]'>Object detection in React using TensorFlow involves integrating TensorFlow.js, a JavaScript library for machine learning, to enable real-time identification and localization of objects in images or video streams within a web application. By loading pre-trained models such as COCO-SSD or MobileNet, developers can leverage TensorFlow's prediction capabilities directly in the browser without requiring a backend server. HTML5 elements like `` or `` are used for media capture, and the detection results, including object labels and bounding boxes, are rendered dynamically using React's state or DOM manipulation. This approach is ideal for creating interactive, AI-powered web experiences such as real-time video analytics or augmented reality applications.
               </p>

@@ -6,11 +6,12 @@ const About = () => {
     return (
         <>
             <div>
-                <div className='pb-16 md:py-0 min-h-screen '>
+                <div className='md:py-0 min-h-screen '>
                     <div className=''>
-                        <h2 className='text-center py-10 text-white text-xl px-10 md:text-4xl font-bold'>About AI Plugin Galaxy</h2>
+                        <h2 className='text-center pt-16 text-white text-xl px-10 md:text-6xl font-bold'>About</h2>
+                        <h2 className='text-center pb-10 text-[#6463cb] text-xl px-10 md:text-5xl font-bold'>AI Plugin Galaxy</h2>
                     </div>
-                    <div className='text-white px-10 md:px-24 text-md md:text-xl text-justify'>
+                    <div className='text-white px-10 md:px-48 text-md md:text-xl text-justify pb-16'>
                         <span>
 
                             <p className='py-5'> Welcome to "AI Plugin Galaxy", your ultimate hub for exploring, discovering, and integrating cutting-edge AI plugins into your workflows. At AI Plugin Galaxy, we are passionate about simplifying the way individuals and businesses harness the power of artificial intelligence.</p>
@@ -25,7 +26,7 @@ const About = () => {
 
                             <p className='py-5'>Whether you’re a developer, entrepreneur, or enthusiast, AI Plugin Galaxy is here to help you navigate the universe of AI technology and take your projects to the next level.</p>
 
-                            <p>Explore. Innovate. Transform. Welcome to the Galaxy of Possibilities! <button className='py-2 px-3 rounded-lg shadow-lg shadow-[#661557] hover:border hover:border-[#661557]'><Link href="/">Continue..</Link></button> </p>
+                            <p>Explore. Innovate. Transform. Welcome to the Galaxy of Possibilities! <button className='py-2 px-4 ml-3 rounded-xl shadow-lg shadow-[#6463cb] hover:border hover:border-[#6463cb]'><Link href="/">Continue..</Link></button> </p>
                         </span>
 
                     </div>

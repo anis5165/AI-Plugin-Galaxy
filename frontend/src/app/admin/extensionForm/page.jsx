@@ -15,7 +15,8 @@ const DocumenForm = () => {
     const documenForms = useFormik({
         initialValues: {
             extensionName: '',
-            details: ''
+            details: '',
+            imageurl: ''
         },
         onSubmit: (values, { resetForm }) => {
             console.log(values)
@@ -42,8 +43,8 @@ const DocumenForm = () => {
     }, [])
     return (
         <>
-            <div className='font-mono'>
-                <div className='py-16 min-h-screen w-full fixed bg-[url("/ai-bg-23.jpg")] bg-cover flex justify-center items-center'>
+            <div className='  '>
+                <div className='py-16 min-h-screen w-full fixed flex justify-center items-center'>
                     <div className='border bg-[] shadow-md rounded-xl w-1/3 flex justify-center items-center py-16 px-20'>
                         <form onSubmit={documenForms.handleSubmit}>
                             <h2 className='pb-10 text-lg text-white'>Documentation Form</h2>
