@@ -1,39 +1,34 @@
 'use client';
-import React from 'react'
+import React from 'react';
 import { FaUser } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { FaUserPlus } from "react-icons/fa";
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
-
-
+import { MdEmail } from "react-icons/md";
 
 const SignupSchema = Yup.object().shape({
     name: Yup.string()
-    .max(20,'name must be atmost 20 letters')
-    .required('name is required'),
+        .max(20, 'Name must be at most 20 characters')
+        .required('Name is required'),
 
     email: Yup.string()
-    .email('Please enter a valid email address')
-    .required('email is required'),
+        .email('Please enter a valid email address')
+        .required('Email is required'),
 
     password: Yup.string()
-    .min(8,'password must be atleast 8 character')
-    .matches(/[a-z]/,'password must contain atleast one lowercase letter')
-    .matches(/[A-Z]/,'password must contain atleat one uppercase letter')
-    .matches(/[0-9]/,'password must contain atleast one number')
-    .matches(/[!@#$%^&*(){/}|[\]:"'';,.?]/,'password must contain atleast one character')
-    .required('password is required')
-})
-
-
+        .min(8, 'Password must be at least 8 characters')
+        .matches(/[a-z]/, 'Password must contain at least one lowercase letter')
+        .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
+        .matches(/[0-9]/, 'Password must contain at least one number')
+        .matches(/[!@#$%^&*(),.?":{}|<>]/, 'Password must contain at least one special character')
+        .required('Password is required'),
+});
 
 const SignUp = () => {
-
-    const router = useRouter()
+    const router = useRouter();
 
     const signupForm = useFormik({
         initialValues: {
@@ -42,105 +37,120 @@ const SignUp = () => {
             password: '',
         },
         onSubmit: (values, { resetForm }) => {
-            console.log(values)
-
             axios.post('http://localhost:5000/user/add', values)
-            .then((result) => {
-                console.log(result.status)
-                resetForm()
-                toast.success('User Successfully Added')
-                router.push('/login')
-            }).catch((err) => {
-                console.log(err)
-                toast.error('Failed to add user')
-            });
+                .then((result) => {
+                    resetForm();
+                    toast.success('User Successfully Added');
+                    router.push('/login');
+                })
+                .catch(() => {
+                    toast.error('Failed to add user');
+                });
         },
-        validationSchema: SignupSchema
-    })
-
-
+        validationSchema: SignupSchema,
+    });
 
     return (
-        <>
-            <div className='font-mono'>
-                <div className='py-24 md:py-16 flex justify-center items-center'>
-                    <div className='border bg-[] shadow-md rounded-xl w-5/6 md:w-1/3 flex justify-center items-center py-10 md:py-16 px-8 md:px-20'>
-                        <form onSubmit={signupForm.handleSubmit}>
-                            <h2 className='pb-10 text-lg text-white'>Register Here</h2>
-                            <div className='mb-3 flex items-center pl-4 bg-white rounded-full'>
-                                <label htmlFor=""
-                                    className='inline-block pr-6 border-r border-gray-50 w-5'
-                                >
-                                    <FaUserPlus size={20} />
-                                </label>
-                                {signupForm.errors.name && signupForm.touched.name ? (
-                                    <div className='text-red-500 text-sm'>{signupForm.errors.name}</div>
-                                ): null}
-                                <input 
-                                    type="text" 
-                                    id='name'
-                                    onChange={signupForm.handleChange}
-                                    value={signupForm.values.name}
-                                    className='w-full pl-4 pr-6 font-bold placeholder-gray-900 focus:outline-none rounded-r-full py-4'
-                                    placeholder='Username'
-                                />
-                            </div>
-                            <div className='flex items-center pl-4 mb-3 bg-white rounded-full'>
-                                <label htmlFor=""
-                                    className='inline-block pr-6 border-r border-gray-50 w-5'
-                                >
-                                    <FaUser size={20} />
-                                </label>
-                                {signupForm.errors.email && signupForm.touched.email ? (
-                                    <div className='text-red-500 text-sm'>{signupForm.errors.email}</div>
-                                ): null}
-                                <input
-                                    type="text"
-                                    id='email'
-                                    onChange={signupForm.handleChange}
-                                    value={signupForm.values.email}
-                                    className='w-full pl-4 pr-6 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
-                                    placeholder='example@habib.com'
-                                />
-                            </div>
+        <div className="relative flex justify-center items-center py-24 px-5 sm:px-10">
+            <div className="relative border border-[#6463cb] w-full max-w-4xl flex flex-col md:flex-row shadow-xl shadow-[#6463cb] rounded-2xl overflow-hidden">
+                {/* Form Section */}
+                <div className="w-full md:w-1/2 p-6 md:p-12">
+                    <h2 className="text-3xl text-white font-semibold text-center mb-6">Register</h2>
+                    <form
+                        onSubmit={signupForm.handleSubmit}
+                        className="w-full max-w-xs mx-auto space-y-6"
+                    >
+                        {/* Name Input */}
+                        <div className="relative">
+                            <FaUser className="absolute top-3 left-3 text-gray-400" />
+                            {signupForm.errors.name && signupForm.touched.name && (
+                                <div className="text-red-500 text-sm">{signupForm.errors.name}</div>
+                            )}
+                            <input
+                                type="text"
+                                id="name"
+                                className="block w-full pl-10 py-2.5 text-sm text-white bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-[#6463cb] peer"
+                                placeholder=" "
+                                onChange={signupForm.handleChange}
+                                value={signupForm.values.name}
+                                required
+                            />
+                            <label
+                                htmlFor="name"
+                                className="absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 left-10 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >
+                                Name
+                            </label>
+                        </div>
 
-                            <div className='flex items-center pl-4 mb-3 bg-white rounded-full'>
-                                <label htmlFor=""
-                                    className='inline-block pr-6 border-r border-gray-50 w-5'
-                                >
-                                    <RiLockPasswordFill size={20} />
-                                </label>
-                                {signupForm.errors.password && signupForm.touched.password ?(
-                                    <div className='text-red-500 text-sm'>{signupForm.errors.password}</div>
-                                ): null}
-                                <input
-                                    type="Password"
-                                    id='password'
-                                    onChange={signupForm.handleChange}
-                                    value={signupForm.values.password}
-                                    className='w-full pl-4 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
-                                    placeholder='Create Password'
-                                />
-                            </div>
-                            <div className='inline-block pt-3'>
+                        {/* Email Input */}
+                        <div className="relative">
+                            <MdEmail className="absolute top-3 left-3 text-gray-400" />
+                            {signupForm.errors.email && signupForm.touched.email && (
+                                <div className="text-red-500 text-sm">{signupForm.errors.email}</div>
+                            )}
+                            <input
+                                type="email"
+                                id="email"
+                                className="block w-full pl-10 py-2.5 text-sm text-white bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-[#6463cb] peer"
+                                placeholder=" "
+                                onChange={signupForm.handleChange}
+                                value={signupForm.values.email}
+                                required
+                            />
+                            <label
+                                htmlFor="email"
+                                className="absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 left-10 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >
+                                Email
+                            </label>
+                        </div>
 
-                                <input
-                                    type="checkbox"
-                                    class='accent-[#661557]'
-                                />
-                                <span className='font-mono pl-2 text-sm text-white'>By sign up, you agree to our Terms, Policy & Cookies.</span>
-                            </div>
-                            <div className='mt-6'>
-                            <button className='bg-white text-center w-full p-3 rounded-lg shadow-lg shadow-[#3e363e] hover:border hover:border-[#7d316f]'>Get Started</button>
+                        {/* Password Input */}
+                        <div className="relative">
+                            <RiLockPasswordFill className="absolute top-3 left-3 text-gray-400" />
+                            {signupForm.errors.password && signupForm.touched.password && (
+                                <div className="text-red-500 text-sm">{signupForm.errors.password}</div>
+                            )}
+                            <input
+                                type="password"
+                                id="password"
+                                className="block w-full pl-10 py-2.5 text-sm text-white bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-[#6463cb] peer"
+                                placeholder=" "
+                                onChange={signupForm.handleChange}
+                                value={signupForm.values.password}
+                                required
+                            />
+                            <label
+                                htmlFor="password"
+                                className="absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 left-10 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >
+                                Password
+                            </label>
+                        </div>
 
-                            </div>
-                        </form>
+                        <div className="text-center">
+                            <button
+                                type="submit"
+                                className="bg-[#6463cb] text-white py-2 px-6 rounded-lg hover:bg-[#4a48b8] transition duration-300"
+                            >
+                                Sign Up
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
+                {/* Background Section */}
+                <div className="relative w-full md:w-1/2 flex items-center justify-center ">
+                    <div className="absolute md:-top-80 md:-right-80  md:block w-[150%] md:h-[150%] h-[100%] bg-[#4a48b8] hover:bg-[#43429f] md:rotate-45 scale-125"></div>
+                    <div className="relative z-10 text-white text-center px-6">
+                        <h3 className="text-2xl md:text-5xl font-bold">Welcome!</h3>
+                        <p className="my-1 mb-4 text-sm md:text-base">Register to continue.</p>
                     </div>
                 </div>
             </div>
-        </>
-    )
-}
+        </div>
+    );
+};
 
-export default SignUp
+export default SignUp;

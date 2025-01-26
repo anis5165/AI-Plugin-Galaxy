@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaUserPlus } from "react-icons/fa6";
@@ -10,154 +10,155 @@ import { ImFileText } from "react-icons/im";
 import * as Yup from 'yup';
 import { useRouter } from 'next/navigation';
 
-
-
-
-const ConatctSchema = Yup.object().shape({
-    fName: Yup.string()
-        .required('First Name is Required'),
-
-    email: Yup.string()
-        .email('Please enter a vaild email address')
-        .required('Email is Required'),
-
-    details: Yup.string()
-        .required('Details is Required')
-})
-
+const ContactSchema = Yup.object().shape({
+    fName: Yup.string().required('First Name is Required'),
+    email: Yup.string().email('Please enter a valid email address').required('Email is Required'),
+    details: Yup.string().required('Details are Required'),
+});
 
 const ContactUs = () => {
-
     const contactusForm = useFormik({
         initialValues: {
             fName: '',
             lName: '',
             email: '',
-            details: ''
+            details: '',
         },
         onSubmit: (values, { resetForm }) => {
-            console.log(values)
-
             axios.post('http://localhost:5000/contact/add', values)
-                .then((result) => {
-                    console.log(result.status)
-                    resetForm()
-                    toast.success('Successfully Send')
-                    router.push('/login')
-                }).catch((err) => {
-                    console.log(err)
-                    toast.error('Failed to send')
+                .then(() => {
+                    resetForm();
+                    toast.success('Message sent successfully!');
+                    router.push('/login');
+                })
+                .catch(() => {
+                    toast.error('Failed to send message.');
                 });
         },
-        validationSchema: ConatctSchema
-    })
+        validationSchema: ContactSchema,
+    });
 
-      const router = useRouter();
-    
-      useEffect(() => {
+    const router = useRouter();
+
+    useEffect(() => {
         if (!localStorage.getItem('user')) {
-          router.push('/login');
-          return
+            router.push('/login');
         }
-      }, [])
+    }, []);
 
     return (
-        <>
-            <div className='font-mono'>
-                <div className='py-16 flex justify-center items-center'>
-                    <div className='border shadow-md rounded-xl md:w-1/3 flex justify-center items-center py-16 px-16'>
-                        <form onSubmit={contactusForm.handleSubmit}>
-                            <h2 className='pb-10 text-lg text-white'>Conatct us</h2>
-                            <div className='flex justify-between items-center gap-3'>
-                                <div className='flex items-center pl-4 mb-3 bg-white rounded-full'>
-                                    <label htmlFor=""
-                                        className='inline-block pr-6 border-r border-gray-50 w-5'
-                                    >
-                                        <FaUser size={20} />
-                                    </label>
-                                    {contactusForm.errors.fName && contactusForm.touched.fName ? (
-                                        <div className='text-red-600 text-sm'>{contactusForm.errors.fName}</div>
-                                    ) : null}
-                                    <input
-                                        type="text"
-                                        id='fName'
-                                        onChange={contactusForm.handleChange}
-                                        value={contactusForm.values.fName}
-                                        className='w-full pl-1 pr-6 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
-                                        placeholder='First Name'
-                                    />
-                                </div>
+        <div className="relative text-white flex justify-center items-center py-16 px-5 sm:px-10">
+            <div className="relative w-full max-w-4xl flex flex-col md:flex-row shadow-xl shadow-[#6463cb] rounded-2xl overflow-hidden">
+                {/* Form Section */}
+                <div className="w-full md:w-1/2 p-6 md:p-12">
+                    <h2 className="text-3xl font-semibold text-center mb-6">Contact Us</h2>
+                    <form onSubmit={contactusForm.handleSubmit} className="w-full max-w-xs mx-auto space-y-6">
+                        {/* First Name */}
+                        <div className="relative">
+                            <FaUser className="absolute top-3 left-3 text-gray-400" />
+                            {contactusForm.errors.fName && contactusForm.touched.fName && (
+                                <div className="text-red-500 text-sm">{contactusForm.errors.fName}</div>
+                            )}
+                            <input
+                                type="text"
+                                id="fName"
+                                className="block w-full pl-10 py-2.5 text-sm text-white bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-[#6463cb] peer"
+                                placeholder=" "
+                                onChange={contactusForm.handleChange}
+                                value={contactusForm.values.fName}
+                            />
+                            <label
+                                htmlFor="fName"
+                                className="absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 left-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >
+                                First Name
+                            </label>
+                        </div>
 
-                                <div className='flex items-center pl-4 mb-3 bg-white rounded-full'>
-                                    <label htmlFor=""
-                                        className='inline-block pr-6 border-r border-gray-50 w-5'
-                                    >
-                                        <FaUserPlus size={22} />
+                        {/* Last Name */}
+                        <div className="relative">
+                            <FaUserPlus className="absolute top-3 left-3 text-gray-400" />
+                            <input
+                                type="text"
+                                id="lName"
+                                className="block w-full pl-10 py-2.5 text-sm text-white bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-[#6463cb] peer"
+                                placeholder=" "
+                                onChange={contactusForm.handleChange}
+                                value={contactusForm.values.lName}
+                            />
+                            <label
+                                htmlFor="lName"
+                                className="absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 left-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >
+                                Last Name
+                            </label>
+                        </div>
 
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id='lName'
-                                        onChange={contactusForm.handleChange}
-                                        value={contactusForm.values.lName}
-                                        className='w-full pl-1 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
-                                        placeholder='Last NAME'
-                                    />
-                                </div>
-                            </div>
-                            <div className='flex items-center pl-4 mb-3 bg-white rounded-full'>
-                                <label htmlFor=""
-                                    className='inline-block pr-6 border-r border-gray-50 w-5'
-                                >
-                                    <MdEmail size={20} />
-                                </label>
-                                {contactusForm.errors.email && contactusForm.touched.email ? (
-                                    <div className='text-red-600 text-sm'>{contactusForm.errors.email}</div>
-                                ) : null}
-                                <input
-                                    type="email"
-                                    id='email'
-                                    onChange={contactusForm.handleChange}
-                                    value={contactusForm.values.email}
-                                    className='w-full pl-4 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
-                                    placeholder='example@email.com'
-                                />
-                            </div>
-                            <div className='flex items-center pl-4 mb-3 bg-white rounded-full'>
-                                <label htmlFor=""
-                                    className='inline-block pr-6 border-r border-gray-50 w-5'
-                                >
-                                    <ImFileText size={20} />
-                                </label>
-                                {contactusForm.errors.details && contactusForm.touched.details ? (
-                                    <div className='text-red-600 text-sm'>{contactusForm.errors.details}</div>
-                                ) : null}
-                                <textarea
-                                    id="details"
-                                    placeholder='Message'
-                                    onChange={contactusForm.handleChange}
-                                    value={contactusForm.values.details}
-                                    className='w-full pl-4 py-1 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
-                                ></textarea>
-                            </div>
-                            <div className='inline-block pt-3'>
+                        {/* Email */}
+                        <div className="relative">
+                            <MdEmail className="absolute top-3 left-3 text-gray-400" />
+                            {contactusForm.errors.email && contactusForm.touched.email && (
+                                <div className="text-red-500 text-sm">{contactusForm.errors.email}</div>
+                            )}
+                            <input
+                                type="email"
+                                id="email"
+                                className="block w-full pl-10 py-2.5 text-sm text-white bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-[#6463cb] peer"
+                                placeholder=" "
+                                onChange={contactusForm.handleChange}
+                                value={contactusForm.values.email}
+                            />
+                            <label
+                                htmlFor="email"
+                                className="absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 left-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >
+                                Email
+                            </label>
+                        </div>
 
-                                <input
-                                    type="checkbox"
-                                    class='accent-[#a82d91]'
-                                />
-                                <span className='font-mono pl-2 text-white'>You agree to our Terms, Policy & Cookies.</span>
-                            </div>
-                            <div className='mt-5'>
-                                <button className='bg-white text-center w-full p-3 rounded-lg shadow-lg shadow-[#cbc3cb] hover:border hover:border-[#f7f5f5]'>Submit</button>
-                            </div>
-                        </form>
+                        {/* Details */}
+                        <div className="relative">
+                            <ImFileText className="absolute top-3 left-3 text-gray-400" />
+                            {contactusForm.errors.details && contactusForm.touched.details && (
+                                <div className="text-red-500 text-sm">{contactusForm.errors.details}</div>
+                            )}
+                            <textarea
+                                id="details"
+                                className="block w-full pl-10 py-2.5 text-sm text-white bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-[#6463cb] peer"
+                                placeholder=" "
+                                onChange={contactusForm.handleChange}
+                                value={contactusForm.values.details}
+                            />
+                            <label
+                                htmlFor="details"
+                                className="absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 left-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >
+                                Details
+                            </label>
+                        </div>
 
+                        <div className="text-center">
+                            <button
+                                type="submit"
+                                className="bg-[#6463cb] text-white py-2 px-6 rounded-lg hover:bg-[#4a48b8] transition duration-300"
+                            >
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                {/* Background Section */}
+                <div className="relative w-full md:w-1/2 flex items-center justify-center">
+                    <div className="absolute md:-top-full md:-right-full  md:block w-[150%] md:h-[150%] h-[100%] bg-[#4a48b8] hover:bg-[#43429f] md:rotate-45 scale-125"></div>
+                    <div className="relative z-10 text-center px-6">
+                        <h3 className="text-2xl md:text-4xl font-bold">Drop Us a Line</h3>
+                        <p className="my-2 mb-4 text-sm md:text-base">We’re listening – tell us what’s on your mind.</p>
                     </div>
                 </div>
             </div>
-        </>
-    )
-}
+        </div>
+    );
+};
 
-export default ContactUs
+export default ContactUs;

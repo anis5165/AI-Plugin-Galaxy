@@ -26,7 +26,7 @@ const About = () => {
 
                             <p className='py-5'>Whether you’re a developer, entrepreneur, or enthusiast, AI Plugin Galaxy is here to help you navigate the universe of AI technology and take your projects to the next level.</p>
 
-                            <p>Explore. Innovate. Transform. Welcome to the Galaxy of Possibilities! <button className='py-2 px-4 ml-3 rounded-xl shadow-lg shadow-[#6463cb] hover:border hover:border-[#6463cb]'><Link href="/">Continue..</Link></button> </p>
+                            <p>Explore. Innovate. Transform. Welcome to the Galaxy of Possibilities! <button className='py-2 mt-2 px-4 ml-3 rounded-xl shadow-lg shadow-[#6463cb] hover:border hover:border-[#6463cb]'><Link href="/">Continue..</Link></button> </p>
                         </span>
 
                     </div>

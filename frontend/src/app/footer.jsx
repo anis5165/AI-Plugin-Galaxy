@@ -34,11 +34,11 @@ const Footer = () => {
                             <h4 className='text-gray-300 text-sm mb-1 hover:text-gray-400'><Link href="/extensionss">Extension</Link></h4>
                         </div>
                         <div className='pt-2'>
-                            <h2 className='mb-12 text-lg md:text-2xl'>Newsletter</h2>
+                            <h2 className='md:mb-12 text-lg md:text-2xl'>Newsletter</h2>
                             <div className='flex py-4 gap-5'>
                                 <input
                                     type="email"
-                                    className='p-2 md:p-3 pr-2 rounded-xl text-black focus:outline-none'
+                                    className='p-2 md:p-3 pr-2 w-52 sm:w-full rounded-xl text-black focus:outline-none'
                                     placeholder='Email Address'
                                 />
                                 <button className=''><Link href="/" className='py-2 px-3 md:py-3 md:px-4 rounded-lg shadow-lg shadow-[#6463cb] hover:border hover:border-[#6463cb]'>Subscribe</Link></button>

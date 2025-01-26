@@ -8,13 +8,13 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className=' md:px-20 text-white '>
+      <div className=' md:px-10 text-white '>
         {/* hero section  */}
         <div className=' text-white '>
           <div className='py-40 md:py-40 flex flex-col justify-center items-center'>
             <img src="/logo12.png" className='h-32 w-32' />
             <h1 className='text-2xl font-semibold text-center md:text-5xl'>AI PLUGIN <span className='text-[#6463cb]'>GALAXY</span></h1>
-            <h3 className='text-slate-300 text-sm md:text-xl pt-3 px-10 md:px-52 text-center'>Welcome to the documentation for AI Extensions! This guide will help you integrate our AI components into your own projects seamlessly. Our components are designed to be plug-and-play, requiring minimal setup.
+            <h3 className='text-slate-300 text-sm md:text-xl pt-3 px-10 md:px-12 lg:px-52 text-center'>Welcome to the documentation for AI Extensions! This guide will help you integrate our AI components into your own projects seamlessly. Our components are designed to be plug-and-play, requiring minimal setup.
             </h3>
           </div>
         </div>
@@ -23,9 +23,9 @@ const Home = () => {
         {/* about us  */}
         <div className=''>
           <div className='pb-24 md:py-20'>
-            <h2 className='text-center text-5xl mb-16 font-semibold '>ABOUT <span className='text-[#6463cb]'>ME</span></h2>
-            <div className='md:gap-24 md:flex md:justify-between md:items-center px-10 md:px-36'>
-              <div className='rounded-xl'>
+            <h2 className='text-center text-2xl md:text-5xl mb-16 font-semibold '>ABOUT <span className='text-[#6463cb]'>US</span></h2>
+            <div className='md:gap-24 md:flex md:justify-between  md:items-center px-10'>
+              <div className='rounded-xl flex justify-center items-center lg:ml-40 ml-0'>
                 <img src="/about.jpg" className='rounded-2xl shadow-2xl w-96' alt="" />
               </div>
               <div className='md:w-1/2'>
