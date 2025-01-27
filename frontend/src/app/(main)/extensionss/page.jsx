@@ -79,7 +79,7 @@ const Documentation = () => {
                         filteredData.map((extension, index) => (
                             <div
                                 key={index}
-                                className="md:px-20 border w-full md:w-4/5 shadow-xl my-3 rounded-2xl p-8 md:p-10"
+                                className="lg:px-20 border w-full lg:w-4/5 shadow-xl my-3 rounded-2xl p-8 lg:p-10"
                             >
                                 <div className="md:flex md:justify-between">
                                     <div>
@@ -88,7 +88,7 @@ const Documentation = () => {
                                     </div>
                                 </div>
                                 <div className='md:flex md:justify-between md:items-center md:gap-10'>
-                                    <div className='py-3'>
+                                    <div className='py-3 flex justify-center'>
                                         <img src="Object Detection.png" className='w-96 rounded-xl' alt="" />
                                     </div>
                                     <div className='md:w-1/2'>

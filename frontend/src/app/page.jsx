@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link';
 import Footer from "./footer";
 import Navbar from './navbar';
+import { motion } from "framer-motion"
 
 const Home = () => {
   return (
@@ -12,30 +13,54 @@ const Home = () => {
         {/* hero section  */}
         <div className=' text-white '>
           <div className='py-40 md:py-40 flex flex-col justify-center items-center'>
-            <img src="/logo12.png" className='h-32 w-32' />
-            <h1 className='text-2xl font-semibold text-center md:text-5xl'>AI PLUGIN <span className='text-[#6463cb]'>GALAXY</span></h1>
-            <h3 className='text-slate-300 text-sm md:text-xl pt-3 px-10 md:px-12 lg:px-52 text-center'>Welcome to the documentation for AI Extensions! This guide will help you integrate our AI components into your own projects seamlessly. Our components are designed to be plug-and-play, requiring minimal setup.
-            </h3>
+            <motion.img
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.5, delay: 1.5 }}
+              src="/logo12.png" className='h-32 w-32' />
+            <motion.h1
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+              className='text-2xl font-semibold text-center md:text-5xl'>AI PLUGIN <span className='text-[#6463cb]'>GALAXY</span></motion.h1>
+            <motion.h3
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className='text-slate-300 text-sm md:text-xl pt-3 px-10 md:px-12 lg:px-52 text-center'>Welcome to the documentation for AI Extensions! This guide will help you integrate our AI components into your own projects seamlessly. Our components are designed to be plug-and-play, requiring minimal setup.
+            </motion.h3>
           </div>
         </div>
 
 
         {/* about us  */}
         <div className=''>
-          <div className='pb-24 md:py-20'>
-            <h2 className='text-center text-2xl md:text-5xl mb-16 font-semibold '>ABOUT <span className='text-[#6463cb]'>US</span></h2>
-            <div className='md:gap-24 md:flex md:justify-between  md:items-center px-10'>
-              <div className='rounded-xl flex justify-center items-center lg:ml-40 ml-0'>
+          <div className='pb-24 md:py-28 w-full'>
+            <motion.h2
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: -100 }}
+              transition={{ duration: 0.5 }}
+              className='text-center text-2xl md:text-5xl mb-16 font-semibold '>ABOUT <span className='text-[#6463cb]'>US</span></motion.h2>
+            <div className='md:gap-24 md:flex md:justify-between  md:items-center px-10 md:px-24'>
+              <motion.div
+                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+                className='rounded-xl flex justify-center items-center lg:ml-36 ml-0'>
                 <img src="/about.jpg" className='rounded-2xl shadow-2xl w-96' alt="" />
-              </div>
-              <div className='md:w-1/2'>
-                <p className=' pt-10'>Welcome to AI Plugin Galaxy, your one-stop destination for exploring a universe of cutting-edge AI-powered plugins and extensions. Our platform offers a diverse collection of tools designed to seamlessly integrate with your projects, enhancing functionality and simplifying complex tasks. From object detection and hand gesture recognition to advanced AI-based utilities, we provide solutions that empower developers, creators, and businesses alike.</p> <br />
+              </motion.div>
+              <motion.div
+                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.5 }}
+                className='md:w-1/2 w-fit'>
+                <p className='pt-10 sm:pt-0'>Welcome to AI Plugin Galaxy, your one-stop destination for exploring a universe of cutting-edge AI-powered plugins and extensions. Our platform offers a diverse collection of tools designed to seamlessly integrate with your projects, enhancing functionality and simplifying complex tasks. From object detection and hand gesture recognition to advanced AI-based utilities, we provide solutions that empower developers, creators, and businesses alike.</p> <br />
 
                 <p className='hidden md:block text-justify'> At AI Plugin Galaxy, we are dedicated to delivering innovative, user-friendly, and highly adaptable plugins that harness the power of artificial intelligence. Whether you're building applications, working on interactive systems, or exploring new possibilities in AI, our curated collection is here to fuel your creativity and productivity. </p> <br />
 
                 <p className='text-justify'> Discover the future of AI tools—explore AI Plugin Galaxy today!</p>
                 <button className='pt-5'><Link href="/about" className='p-3 rounded-xl shadow-lg shadow-[#6463cb] hover:border hover:border-[#6463cb]'>Read More</Link></button>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -48,10 +73,18 @@ const Home = () => {
             <div>
               <section className="">
                 <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-                  <h2 className="text-center text-4xl font-bold tracking-tight text-gray-200 sm:text-5xl">
+                  <motion.h2
+                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: -100 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center text-4xl font-bold tracking-tight text-gray-200 sm:text-5xl">
                     Read trusted reviews from our <span className='text-[#6463cb]'>Users</span>
-                  </h2>
-                  <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 overflow-y-auto">
+                  </motion.h2>
+                  <motion.div
+                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 1 }}
+                    className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 overflow-y-auto">
                     <blockquote className="rounded-lg bg-[] border p-6 shadow-sm sm:p-8">
                       <div className="flex items-center gap-4">
                         <img
@@ -119,7 +152,7 @@ const Home = () => {
                       </div>
 
                       <p className="mt-4 text-[#CBD5E1]">
-                      Time-Saver for Developers: AI Plugin Galaxy transforms project workflows. It’s easy to use, packed with versatile extensions, and ensures smooth AI adoption without any hassle.                      </p>
+                        Time-Saver for Developers: AI Plugin Galaxy transforms project workflows. It’s easy to use, packed with versatile extensions, and ensures smooth AI adoption without any hassle.                      </p>
                     </blockquote>
 
                     <blockquote className="rounded-lg bg-[] border p-6 shadow-sm sm:p-8">
@@ -189,7 +222,7 @@ const Home = () => {
                       </div>
 
                       <p className="mt-4 text-[#CBD5E1]">
-                      All-in-One AI Solution: A perfect hub for developers. With a wide variety of plugins, it offers seamless AI integration. The intuitive interface ensures effortless usability.                      </p>
+                        All-in-One AI Solution: A perfect hub for developers. With a wide variety of plugins, it offers seamless AI integration. The intuitive interface ensures effortless usability.                      </p>
                     </blockquote>
 
                     <blockquote className="rounded-lg bg-[] border p-6 shadow-sm sm:p-8">
@@ -259,9 +292,9 @@ const Home = () => {
                       </div>
 
                       <p className="mt-4 text-[#CBD5E1]">
-                      Innovative and User-Friendly: AI Plugin Galaxy simplifies integrating AI into projects. The extensive hub of AI extensions makes it a breeze to find and implement tools, saving hours of development time. Highly recommended!                      </p>
+                        Innovative and User-Friendly: AI Plugin Galaxy simplifies integrating AI into projects. The extensive hub of AI extensions makes it a breeze to find and implement tools, saving hours of development time. Highly recommended!                      </p>
                     </blockquote>
-                  </div>
+                  </motion.div>
                 </div>
               </section>
             </div>

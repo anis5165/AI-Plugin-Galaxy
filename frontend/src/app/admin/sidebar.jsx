@@ -8,7 +8,7 @@ const Sidebar = () => {
       <>
         {/* component */}
         <div className="min-h-screen">
-          <aside className="bg-[] -translate-x-80 fixed inset-0 z-50 w-72 transition-transform duration-300 xl:translate-x-0">
+          <aside className="-translate-x-80 fixed inset-0 z-50 w-72 transition-transform duration-300 xl:translate-x-0">
             <div className="relative border-b border-white/20  font-[sans-serif]">
               <Link className="flex items-center gap-4 py-6 px-8" href="#/">
                 <h6 className="block antialiased tracking-normal font-[sans-serif] text-xl font-semibold leading-relaxed text-white">
