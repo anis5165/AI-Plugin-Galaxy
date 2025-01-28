@@ -13,7 +13,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="text-white flex items-center flex-wrap px-2 md:px-16">
+      <nav className="text-white flex items-center flex-wrap px-2 md:px-20">
         <div className="w-24 px-2 md:px-0 animate-pulse">
           <img className="pt-2 h-16 w-16" src="logo12.png" alt="Logo" />
         </div>
@@ -27,7 +27,7 @@ export const Navbar = () => {
           className={`${active ? 'rounded-xl' : 'hidden'
             } w-full text-center lg:inline-flex lg:flex-grow lg:w-auto`}
         >
-          <div className="gap-4 lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
+          <div className="gap-4 lg:font-normal font-light tracking-tighter lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
             <Link
               href="/"
               className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center hover:text-gray-500"

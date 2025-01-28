@@ -89,7 +89,7 @@ const Documentation = () => {
                                 </div>
                                 <div className='md:flex md:justify-between md:items-center md:gap-10'>
                                     <div className='py-3 flex justify-center'>
-                                        <img src="Object Detection.png" className='w-96 rounded-xl' alt="" />
+                                        <img src={extension.imageurl} className='w-96 rounded-xl' alt="" />
                                     </div>
                                     <div className='md:w-1/2'>
                                         <p className="pt-8 text-slate-400">{extension.details}</p>
@@ -97,7 +97,7 @@ const Documentation = () => {
                                 </div>
                                 <div className="pt-6">
                                     <button className="bg-white text-center py-3 px-8 rounded-lg shadow-lg shadow-[#cbc3cb] hover:border hover:border-[#ebe8eb]">
-                                        <Link href="/documentations/objectDetectionDocumentation">View Documentation</Link>
+                                        <Link href={`/documentation/${extension._id}`}>View Documentation</Link>
                                     </button>
                                 </div>
                             </div>

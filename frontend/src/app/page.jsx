@@ -17,6 +17,10 @@ const Home = () => {
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.5, delay: 1.5 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              whileDrag={{ scale: 0.9, rotate: 10 }}
+              drag
               src="/logo12.png" className='h-32 w-32' />
             <motion.h1
               initial={{ y: -100, opacity: 0 }}
