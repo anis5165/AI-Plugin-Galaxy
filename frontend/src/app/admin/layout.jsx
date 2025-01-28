@@ -7,7 +7,7 @@ import Sidebar from "./sidebar";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="selection:bg-cyan-500 selection:text-cyan-900">
         {/* <AppProvider> */}
         {/* <AdminAuth> */}
         
