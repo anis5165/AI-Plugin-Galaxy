@@ -27,7 +27,7 @@ const Documentation = () => {
 
     useEffect(() => {
       fetchExtensionData();
-    }, []);
+    }, [id]);
 
     if (!extensionData) return <p>Loading...</p>;
 
