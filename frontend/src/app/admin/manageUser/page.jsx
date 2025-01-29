@@ -5,9 +5,12 @@ import toast from 'react-hot-toast'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
+
 const Manageuser = () => {
 
     const [userList, setUserList] = useState([])
+    const [active, setActive] = useState(false);
+
 
     const fetchUserList = () => {
         axios.get('http://localhost:5000/user/getall')
@@ -47,14 +50,13 @@ const Manageuser = () => {
 
     return (
         <div>
-            <div className='min-h-screen fixed w-full'>
-                <div className='   bg-[]'>
-                    <div className='lg:max-w-[90%] pl-64 mx-auto  py-36'>
-                        <div className='border rounded-xl shadow-lg p-8'>
-                            <h1 className='text-center mb-7 text-white font-bold text-3xl'>Manage User</h1>
-                            <hr />
-
-                            <table className='w-full border border-white'>
+            <div className='min-h-screen w-full'>
+                <div className='lg:max-w-[90%] md:pl-0 lg:pl-64 mx-auto  py-36'>
+                    <div className='border  rounded-xl shadow-lg p-8'>
+                        <h1 className='text-center mb-7 text-white font-bold text-3xl'>Manage User</h1>
+                        <hr />
+                        <div className='overflow-x-auto'>
+                            <table className='min-w-full border border-white text-sm'>
                                 <thead className='bg-[] border border-b-2 text-white'>
                                     <tr>
                                         <th className='p-2 border border-white'>ID</th>
@@ -92,6 +94,7 @@ const Manageuser = () => {
                 </div>
             </div>
         </div>
+
     )
 }
 

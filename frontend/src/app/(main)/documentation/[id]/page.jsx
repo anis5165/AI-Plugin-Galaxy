@@ -12,30 +12,35 @@ const Documentation = () => {
   const router = useRouter();
 
   const { id } = useParams();
-    const [extensionData, setExtensionData] = useState(null);
+  const [extensionData, setExtensionData] = useState(null);
 
-    const fetchExtensionData = async (values) => {
-        try {
-            const res = await axios.get('http://localhost:5000/extension/getbyid/' +id, values)
-            console.log(res.data)
-            setExtensionData(res.data)
-        } catch (error) {
-            toast.error("Failed to fetch extension data.");
-            console.log("Error fetching extension data:", error);
-        }
-    };
-
-    useEffect(() => {
-      fetchExtensionData();
-    }, [id]);
-
-    if (!extensionData) return <p>Loading...</p>;
+  const fetchExtensionData = async (values) => {
+    try {
+      const res = await axios.get('http://localhost:5000/extension/getbyid/' + id, values)
+      console.log(res.data)
+      setExtensionData(res.data)
+    } catch (error) {
+      toast.error("Failed to fetch extension data.");
+      console.log("Error fetching extension data:", error);
+    }
+  };
 
   useEffect(() => {
     if (typeof window !== 'undefined' && !localStorage.getItem('user')) {
       router.push('/login');
     }
-  }, [router]);
+    fetchExtensionData();
+  }, []);
+
+  // if (!extensionData) return <p>Loading...</p>;
+
+  // useEffect(() => {
+    
+  // }, []);
+
+  if(extensionData===null){
+    return <h1>LOading...</h1>
+  }
 
   return (
     <div className="flex flex-col items-center justify-center w-full text-white min-h-screen">
@@ -50,7 +55,7 @@ const Documentation = () => {
         </header>
 
         <section className="space-y-12">
-          {/* Introduction */}
+
           <div className="bg-gray-800 rounded-2xl p-6 shadow-lg">
             <h2 className="text-2xl font-bold text-[#d8dbdb] mb-4">1. Introduction</h2>
             <p className="text-[#94A3B8]">
@@ -58,7 +63,7 @@ const Documentation = () => {
             </p>
           </div>
 
-          {/* Getting Started */}
+
           <div className="bg-gray-800 rounded-2xl p-6 shadow-lg">
             <h2 className="text-2xl font-bold text-[#d8dbdb] mb-4">2. Getting Started</h2>
             <h3 className="text-xl text-[#d8dbdb] mb-2">2.1 Prerequisites</h3>
@@ -69,13 +74,11 @@ const Documentation = () => {
             </ul>
           </div>
 
-          {/* Installation */}
           <div className="bg-gray-800 rounded-2xl p-6 shadow-lg">
             <h2 className="text-2xl font-bold text-[#d8dbdb] mb-4">3. Installation</h2>
             <p className="text-[#94A3B8]">No installation required. Just plug-and-play.</p>
           </div>
 
-          {/* Usage */}
           <div className="bg-gray-800 rounded-2xl p-6 shadow-lg">
             <h2 className="text-2xl font-bold text-[#d8dbdb] mb-4">4. Usage</h2>
             <h3 className="text-xl text-[#d8dbdb] mb-2">4.1 Include the Script</h3>
@@ -92,7 +95,6 @@ const Documentation = () => {
             </div>
           </div>
 
-          {/* Conclusion */}
           <div className="bg-gray-800 rounded-2xl p-6 shadow-lg">
             <h2 className="text-2xl font-bold text-[#d8dbdb] mb-4">5. Conclusion</h2>
             <p className="text-[#94A3B8]">
@@ -103,9 +105,9 @@ const Documentation = () => {
         </section>
       </div>
 
-      <footer className="text-center mt-12 text-[#94A3B8]">
+      <div className="text-center mt-12 text-[#94A3B8]">
         © {new Date().getFullYear()} AI Extensio
-      </footer>
+      </div>
     </div>
   );
 };

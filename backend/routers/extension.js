@@ -31,7 +31,7 @@ router.get('/getall', (req,res) => {
 })
 
 
-router.get('/extension/getbyid/:id', (req,res) =>{
+router.get('/getbyid/:id', (req,res) =>{
     Model.findById(req.params.id)
     .then((result) => {
         res.json(result)

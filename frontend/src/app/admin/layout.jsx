@@ -4,18 +4,19 @@
 import Sidebar from "./sidebar";
 
 
-export default function RootLayout({ children }) {
+export default function AdminLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="selection:bg-cyan-500 selection:text-cyan-900">
+    <>
+      <div className="selection:bg-cyan-500 selection:text-cyan-900">
+
         {/* <AppProvider> */}
         {/* <AdminAuth> */}
-        
-        {children} 
-        <Sidebar/>
+
+        {children}
+        <Sidebar />
         {/* </AdminAuth> */}
         {/* </AppProvider> */}
-      </body>
-    </html>
+      </div>
+    </>
   );
 }

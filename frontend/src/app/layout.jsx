@@ -1,3 +1,4 @@
+'use client';
 import "./globals.css";
 import { AppProvider } from "@/context/appContext";
 import { Toaster } from "react-hot-toast";
