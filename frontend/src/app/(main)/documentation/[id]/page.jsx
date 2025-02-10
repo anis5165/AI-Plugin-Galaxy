@@ -31,13 +31,6 @@ const Documentation = () => {
     }
     fetchExtensionData();
   }, []);
-
-  // if (!extensionData) return <p>Loading...</p>;
-
-  // useEffect(() => {
-    
-  // }, []);
-
   if(extensionData===null){
     return <h1>LOading...</h1>
   }
@@ -86,8 +79,8 @@ const Documentation = () => {
               To add an AI component, simply include the following <b>div</b> tag where you want the component to appear:
             </p>
             <div className="mt-4">
-              <CopyBlock
-                text={`${extensionData.extensionId} \n ${extensionData.script}`}
+              <CopyBlock 
+              text={`${extensionData.extensionId} \n${extensionData.script}`}
                 theme={dracula}
                 language="html"
                 showLineNumbers
