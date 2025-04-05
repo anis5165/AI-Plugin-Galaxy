@@ -67,7 +67,7 @@ const DocumenForm = () => {
     return (
         <>
             <div className='  '>
-                <div className='py-10 min-h-screen w-full fixed flex justify-center items-center'>
+                <div className='py-10 w-full flex justify-center items-center'>
                     <div className='border shadow-md rounded-xl w-1/3 flex justify-center items-center py-16 px-16'>
                         <form onSubmit={documenForms.handleSubmit}>
                             <h2 className='pb-10 text-lg text-white'>Documentation Form</h2>
@@ -75,14 +75,14 @@ const DocumenForm = () => {
                                 <label htmlFor=""
                                     className='inline-block pr-6 border-r border-gray-50 w-5'
                                 >
-                                    <IoExtensionPuzzle size={20} />
+                                    <IoExtensionPuzzle size={20} className="text-black" />
                                 </label>
                                 <input
                                     type="text"
                                     id="extensionName"
                                     onChange={documenForms.handleChange}
                                     value={documenForms.values.extensionName}
-                                    className='w-full pl-4 pr-6 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
+                                    className='w-full pl-4 pr-6 py-4 font-bold text-black rounded-r-full focus:outline-none'
                                     placeholder='Extension Name'
                                 />
                             </div>
@@ -90,14 +90,14 @@ const DocumenForm = () => {
                                 <label htmlFor=""
                                     className='inline-block pr-6 border-r border-gray-50 w-5'
                                 >
-                                    <IoExtensionPuzzleOutline size={20} />
+                                    <IoExtensionPuzzleOutline size={20} className="text-black"/>
                                 </label>
                                 <input
                                     type="text"
                                     id="extensionId"
                                     onChange={documenForms.handleChange}
                                     value={documenForms.values.extensionId}
-                                    className='w-full pl-4 pr-6 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
+                                    className='w-full pl-4 pr-6 py-4 font-bold text-black rounded-r-full focus:outline-none'
                                     placeholder='Extension Id'
                                 />
                             </div>
@@ -106,14 +106,14 @@ const DocumenForm = () => {
                                 <label htmlFor=""
                                     className='inline-block pr-6 border-r border-gray-50 w-5'
                                 >
-                                    <IoIosCode size={25} />
+                                    <IoIosCode size={25} className="text-black"/>
                                 </label>
                                 <input 
                                     type="text" 
                                     id="script"
                                     onChange={documenForms.handleChange}
                                     value={documenForms.values.script}
-                                    className='w-full pl-4 pr-6 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
+                                    className='w-full pl-4 pr-6 py-4 font-bold text-black rounded-r-full focus:outline-none'
                                     placeholder='script'
                                 />
                             </div>
@@ -121,7 +121,7 @@ const DocumenForm = () => {
                                 <label htmlFor="upload"
                                     className='inline-block pr-6 border-r border-gray-50 w-5'
                                 >
-                                    <input type="file" onChange={upload} id="upload" hidden/><FaLink size={25}/>
+                                    <input type="file" onChange={upload} id="upload" hidden/><FaLink size={25} className="text-black"/>
                                 
                                 </label>
                                 <input 
@@ -129,7 +129,7 @@ const DocumenForm = () => {
                                     id="imageurl"
                                     onChange={documenForms.handleChange}
                                     value={documenForms.values.imageurl}
-                                    className='w-full pl-4 pr-6 py-4 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
+                                    className='w-full pl-4 pr-6 py-4 font-bold text-black rounded-r-full focus:outline-none'
                                     placeholder='Image'
                                 />
                             </div>
@@ -137,18 +137,18 @@ const DocumenForm = () => {
                                 <label htmlFor=""
                                     className='inline-block pr-6 border-r border-gray-50 w-5'
                                 >
-                                    <FcViewDetails size={25} />
+                                    <FcViewDetails size={25} className="text-black"/>
                                 </label>
                                 <textarea
                                     id="details"
                                     onChange={documenForms.handleChange}
                                     value={documenForms.values.details}
                                     placeholder='Details'
-                                    className='w-full pl-4 py-1 font-bold placeholder-gray-900 rounded-r-full focus:outline-none'
+                                    className='w-full pl-4 py-1 font-bold text-black rounded-r-full focus:outline-none'
                                 ></textarea>
                             </div>
                             <div className='mt-5'>
-                                <button type="submit" className='bg-white text-center w-full p-3 rounded-lg shadow-lg shadow-[#3e363e] hover:border hover:border-[#000000]'>Get Started</button>
+                                <button type="submit" className='bg-white text-black text-center w-full p-3 rounded-lg shadow-lg shadow-[#3e363e] hover:border hover:border-[#000000]'>Get Started</button>
                             </div>
                         </form>
 

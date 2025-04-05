@@ -51,7 +51,7 @@ const Manageuser = () => {
     return (
         <div>
             <div className='min-h-screen w-full'>
-                <div className='lg:max-w-[90%] md:pl-0 lg:pl-64 mx-auto  py-36'>
+                <div className='lg:max-w-[90%] md:pl-0 lg:pl-64 mx-auto py-24'>
                     <div className='border  rounded-xl shadow-lg p-8'>
                         <h1 className='text-center mb-7 text-white font-bold text-3xl'>Manage User</h1>
                         <hr />
@@ -81,9 +81,9 @@ const Manageuser = () => {
                                                 <td onClick={() => deleteUser(user._id)} className='p-2 border border-slate-700'>
                                                     <button className='bg-red-500 text-white px-4 py-2 rounded-lg'>Delete</button>
                                                 </td>
-                                                <td className='p-2 border border-slate-700'>
+                                                {/* <td className='p-2 border border-slate-700'>
                                                     <Link href={'/updateUser/' + user._id} className='bg-blue-500 text-white px-4 py-2 rounded-lg'>Update</Link>
-                                                </td>
+                                                </td> */}
                                             </tr>
                                         })
                                     }

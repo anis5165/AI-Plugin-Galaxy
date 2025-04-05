@@ -1,14 +1,15 @@
 'use client';
 import React, { useState } from "react";
 import Link from "next/link";
+import useAppContext from "@/context/appContext";
 
 const Sidebar = () => {
   const [active, setActive] = useState(false);
-
+  const { loggedIn, logout } = useAppContext();
   const handleToggle = () => setActive(!active);
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative ">
       {/* Hamburger Button */}
       <button
         className="p-3 rounded lg:hidden ml-auto outline-none"
@@ -103,8 +104,8 @@ const Sidebar = () => {
           {/* Logout */}
           <ul className="mt-6">
             <li>
-              <Link href="/">
-                <button className="flex items-center gap-4 w-full py-3 px-4 rounded-lg hover:bg-white/10 transition">
+              <>
+                <button onClick={logout} className="flex items-center gap-4 w-full py-3 px-4 rounded-lg hover:bg-white/10 transition">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -115,7 +116,7 @@ const Sidebar = () => {
                   </svg>
                   Logout
                 </button>
-              </Link>
+              </>
             </li>
           </ul>
         </nav>

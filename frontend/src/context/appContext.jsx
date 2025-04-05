@@ -32,6 +32,8 @@ export const AppProvider = ({ children }) => {
     if (typeof window !== "undefined") {
       try {
         localStorage.removeItem("user");
+        localStorage.removeItem("admin");
+        localStorage.removeItem("isloggedin");
       } catch (error) {
         console.error("Error removing user from localStorage:", error);
       }

@@ -4,8 +4,6 @@ const Model = require('../models/user');
 
 router.post('/add', (req,res)  => {
     console.log(req.body)
-    // storing data to mogoDB
-    //to add the data in database
     new Model(req.body).save()
     .then((result) => {
         res.json(result)

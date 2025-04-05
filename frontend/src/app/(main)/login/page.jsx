@@ -56,7 +56,7 @@ const Login = () => {
                         router.push('/');
                     }
                 } else {
-                    toast.error('Something went wrong');
+                    toast.error('Invalid Details');
                 }
             } catch (error) {
                 toast.error('Failed to login');

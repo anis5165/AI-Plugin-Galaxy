@@ -12,8 +12,8 @@ export default function AdminLayout({ children }) {
         {/* <AppProvider> */}
         {/* <AdminAuth> */}
 
-        {children}
         <Sidebar />
+        {children}
         {/* </AdminAuth> */}
         {/* </AppProvider> */}
       </div>
