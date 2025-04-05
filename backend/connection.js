@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-
-const url = "mongodb+srv://anis5165:Vikas2002@cluster0.y3opu.mongodb.net/AI-Plugin-Galaxy?retryWrites=true&w=majority&appName=Cluster0";
+require("dotenv").config();
+const url = process.env.MONGO_URI;
 mongoose.connect(url)
 
     .then((result) => {

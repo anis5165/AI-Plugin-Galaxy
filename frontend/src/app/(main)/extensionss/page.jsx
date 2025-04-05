@@ -97,7 +97,7 @@ const Documentation = () => {
                                 </div>
                                 <div className="pt-6">
                                     <button className="bg-white text-center py-3 px-8 rounded-lg shadow-lg shadow-[#cbc3cb] hover:border hover:border-[#ebe8eb]">
-                                        <Link href={`/documentation/${extension._id}`}>View Documentation</Link>
+                                        <Link href={`/documentation/${extension._id}`} className='text-black'>View Documentation</Link>
                                     </button>
                                 </div>
                             </div>
