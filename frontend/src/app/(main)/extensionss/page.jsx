@@ -15,7 +15,7 @@ const Documentation = () => {
     // Fetch extensions data
     const fetchExtensionData = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/extension/getall');
+            const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/extension/getall`);
             setExtensionData(res.data);
             setFilteredData(res.data); // Initialize filtered data
         } catch (error) {

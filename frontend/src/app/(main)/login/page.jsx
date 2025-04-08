@@ -33,7 +33,7 @@ const Login = () => {
         },
         onSubmit: async (values, action) => {
             try {
-                const res = await fetch('http://localhost:5000/user/authenticate', {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/authenticate`, {
                     method: 'POST',
                     body: JSON.stringify(values),
                     headers: {

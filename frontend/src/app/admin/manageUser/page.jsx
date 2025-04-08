@@ -13,7 +13,7 @@ const Manageuser = () => {
 
 
     const fetchUserList = () => {
-        axios.get('http://localhost:5000/user/getall')
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getall`)
             .then((res) => {
                 console.log(res.status)
                 console.table(res.data)
@@ -28,7 +28,7 @@ const Manageuser = () => {
     }, [])
 
     const deleteUser = (id) => {
-        axios.delete('http://localhost:5000/user/delete/' + id)
+        axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/user/delete/` + id)
             .then((result) => {
                 toast.success('User deleted successfully')
                 fetchUserList()

@@ -16,7 +16,7 @@ const Documentation = () => {
 
   const fetchExtensionData = async (values) => {
     try {
-      const res = await axios.get('http://localhost:5000/extension/getbyid/' + id, values)
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/extension/getbyid/` + id, values)
       console.log(res.data)
       setExtensionData(res.data)
     } catch (error) {

@@ -14,25 +14,6 @@ import { IoIosCode } from "react-icons/io";
 
 const DocumenForm = () => {
 
-    const upload = (e) => {
-
-        const file = e.target.files[0];
-        const fd = new FormData();
-        fd.append('file', file);
-        fd.append('upload_preset', 'Mernbatch8')
-        fd.append('colud_name', 'dgx8094we')
-
-        axios.post('https://api.cloudinary.com/v1_1/dgx8094we/image/upload', fd)
-            .then((result) => {
-                toast.success('file upload successfully');
-                console.log(result.data);
-            }).catch((err) => {
-                console.log(err);
-                toast.error('failed to upload file');
-
-        });
-    }
-
     const documenForms = useFormik({
         initialValues: {
             extensionName: '',
@@ -44,7 +25,7 @@ const DocumenForm = () => {
         onSubmit: (values, { resetForm }) => {
             console.log(values)
 
-            axios.post('http://localhost:5000/extension/add', values)
+            axios.post(`${process.env.NEXT_PUBLIC_API_URL}/extension/add`, values)
                 .then((result) => {
                     console.log(result.status)
                     resetForm()
@@ -55,6 +36,25 @@ const DocumenForm = () => {
                 });
         },
     })
+
+    const upload = (e) => {
+        const file = e.target.files[0];
+        const fd = new FormData();
+        fd.append('file', file);
+        fd.append('upload_preset', 'Mernbatch8')
+        fd.append('colud_name', 'dgx8094we')
+
+        axios.post('https://api.cloudinary.com/v1_1/dgx8094we/image/upload', fd)
+            .then((result) => {
+                toast.success('file upload successfully');
+                // Set the imageurl in formik values automatically
+                documenForms.setFieldValue('imageurl', result.data.secure_url);
+                console.log(result.data);
+            }).catch((err) => {
+                console.log(err);
+                toast.error('failed to upload file');
+        });
+    }
 
     const router = useRouter()
 

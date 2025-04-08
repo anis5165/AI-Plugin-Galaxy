@@ -19,7 +19,7 @@ const Contact = () => {
     const [feedbackList, setFeedbackList] = useState([])
 
     const fetchFeedbackList = () => {
-        axios.get('http://localhost:5000/contact/getall')
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/contact/getall`)
             .then((res) => {
                 console.log(res.status)
                 console.table(res.data)
@@ -35,7 +35,7 @@ const Contact = () => {
     }, [])
 
     const deleteFeedback = (id) => {
-        axios.delete('http://localhost:5000/contact/delete/' + id)
+        axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/contact/delete/` + id)
             .then((result) => {
                 toast.success('User deleted successfully')
                 fetchFeedbackList()
