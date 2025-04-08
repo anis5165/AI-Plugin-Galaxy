@@ -44,7 +44,7 @@ const ContactUs = () => {
         if (!localStorage.getItem('user')) {
             router.push('/login');
         }
-    }, []);
+    }, [router]);
 
     return (
         <div className="relative text-white flex justify-center items-center py-16 px-5 sm:px-10">

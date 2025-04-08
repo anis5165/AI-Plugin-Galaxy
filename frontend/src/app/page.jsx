@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Footer from "./footer";
 import Navbar from './navbar';
 import { motion } from "framer-motion"
+import logo from '../../public/logo12.png';
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
         {/* hero section  */}
         <div className=' text-white '>
           <div className='py-40 md:py-40 flex flex-col justify-center items-center'>
-            <motion.img
+            <motion.div
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.5, delay: 1.5 }}
@@ -21,7 +22,10 @@ const Home = () => {
               whileTap={{ scale: 0.95 }}
               whileDrag={{ scale: 0.9, rotate: 10 }}
               drag
-              src="/logo12.png" className='h-32 w-32' />
+              className='h-32 w-32'>
+              <img src="/logo12.png" width={200} height={100} alt="Logo" />
+
+            </motion.div>
             <motion.h1
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -51,7 +55,14 @@ const Home = () => {
                 initial={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
                 className='rounded-xl flex justify-center items-center lg:ml-36 ml-0'>
-                <img src="/about.jpg" className='rounded-2xl shadow-2xl w-96' alt="" />
+                <img 
+                  src="/about.jpg" 
+                  alt="About Us" 
+                  width={500} 
+                  height={300} 
+                  // priority 
+                  className='rounded-2xl shadow-2xl w-96' 
+                />
               </motion.div>
               <motion.div
                 whileInView={{ opacity: 1, x: 0 }}
@@ -137,8 +148,11 @@ const Home = () => {
                     <blockquote className="rounded-lg bg-[] border p-6 shadow-sm sm:p-8">
                       <div className="flex items-center gap-4">
                         <img
-                          alt=""
+                          alt="User"
                           src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                          width={500}
+                          height={300}
+                          // priority
                           className="size-14 rounded-full object-cover"
                         />
 
@@ -207,8 +221,11 @@ const Home = () => {
                     <blockquote className="rounded-lg bg-[] border p-6 shadow-sm sm:p-8">
                       <div className="flex items-center gap-4">
                         <img
-                          alt=""
+                          alt="User"
                           src="/sarthak.jpg"
+                          width={500}
+                          height={300}
+                          // priority
                           className="size-14  rounded-full object-cover"
                         />
 
@@ -277,8 +294,11 @@ const Home = () => {
                     <blockquote className="rounded-lg bg-[] border p-6 shadow-sm sm:p-8">
                       <div className="flex items-center gap-4">
                         <img
-                          alt=""
+                          alt="User"
                           src="/priya.jpg"
+                          width={500}
+                          height={300}
+                          // priority
                           className="size-14 rounded-full object-cover"
                         />
 
@@ -360,7 +380,7 @@ const Home = () => {
             </p>
             <Link href="/extensionss" className="text-[#6463cb] hover:text-white shadow-xl shadow-[#6463cb] hover:border hover:border-[#6463cb] font-bold py-3 px-8 rounded-lg transition">
               Get Started Today
-            </Link>+
+            </Link>
           </div>
         </section>
 

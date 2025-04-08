@@ -8,9 +8,8 @@ const router = useRouter()
   useEffect(() => {
     if (!localStorage.getItem('admin')) {
       router.push('/login');
-      return
     }
-  }, [])
+  }, [router]) // Add router to dependency array
 
   return (
     <>

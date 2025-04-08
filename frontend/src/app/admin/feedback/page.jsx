@@ -14,7 +14,7 @@ const Contact = () => {
             router.push('/login');
             return
         }
-    }, [])
+    }, [router])
 
     const [feedbackList, setFeedbackList] = useState([])
 

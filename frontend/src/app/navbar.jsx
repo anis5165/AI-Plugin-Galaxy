@@ -15,7 +15,7 @@ export const Navbar = () => {
     <>
       <nav className="text-white flex items-center flex-wrap px-2 md:px-20">
         <div className="w-24 px-2 md:px-0 animate-pulse">
-          <img className="pt-2 h-16 w-16" src="logo12.png" alt="Logo" />
+          <img className="pt-2 h-16 w-16" src="/logo12.png" alt="Logo" />
         </div>
         <button
           className="inline-flex p-3 rounded lg:hidden ml-auto outline-none"

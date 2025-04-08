@@ -26,11 +26,9 @@ const Documentation = () => {
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && !localStorage.getItem('user')) {
-      router.push('/login');
-    }
     fetchExtensionData();
-  }, []);
+  }, [fetchExtensionData, router]);
+
   if(extensionData===null){
     return <h1>LOading...</h1>
   }

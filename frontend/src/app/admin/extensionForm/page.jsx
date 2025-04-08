@@ -63,7 +63,7 @@ const DocumenForm = () => {
             router.push('/login');
             return
         }
-    }, [])
+    }, [router])
     return (
         <>
             <div className='  '>

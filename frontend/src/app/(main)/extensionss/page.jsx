@@ -89,7 +89,12 @@ const Documentation = () => {
                                 </div>
                                 <div className='md:flex md:justify-between md:items-center md:gap-10'>
                                     <div className='py-3 flex justify-center'>
-                                        <img src={extension.imageurl} className='w-96 rounded-xl' alt="" />
+                                        <img
+                                            src={extension.imageurl} 
+                                            alt={extension.extensionName}
+                                            width={500}
+                                            height={300}
+                                        />
                                     </div>
                                     <div className='md:w-1/2'>
                                         <p className="pt-8 text-slate-400">{extension.details}</p>

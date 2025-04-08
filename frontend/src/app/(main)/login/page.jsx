@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import useAppContext from '@/context/appContext';
 
+
 const LoginSchema = Yup.object().shape({
     email: Yup.string()
         .email('Please enter a valid email address')
@@ -129,8 +130,8 @@ const Login = () => {
                         </div>
 
                         <div className="mt-4 text-center">
+                            <p>Don&apos;t have an account?</p>
                             <p>
-                                Don't have an Account?{' '}
                                 <Link href="/signup" className="text-[#6463cb] hover:underline">
                                     Sign Up
                                 </Link>

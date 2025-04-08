@@ -56,9 +56,9 @@ const Footer = () => {
                         <div className='pb-5'>Copyright &copy; 2024 All rights reserved | Block is made with by <Link href="/"><span className='text-[#6463cb] hover:text-[#363484]'>AI-Plugin-Galaxy</span></Link></div>
                     </div>
                 </div>
-                <div className='fixed right-10 bottom-16 z-10-'>
+                {/* <div className='fixed right-10 bottom-16 z-10-'>
                 <FeedbackDialog />
-                </div>
+                </div> */}
             </footer>
         </div>
     )

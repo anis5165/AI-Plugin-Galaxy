@@ -6,15 +6,13 @@ const cors = require("cors");
 const UserRouter = require("./routers/user");
 const ContactRouter = require("./routers/contact");
 const ExtensionRouter = require("./routers/extension");
+
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["*"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true, 
+}));
+
 app.use("/user", UserRouter);
 app.use("/contact", ContactRouter);
 app.use("/extension", ExtensionRouter);

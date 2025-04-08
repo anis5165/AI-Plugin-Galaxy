@@ -46,7 +46,7 @@ const Manageuser = () => {
             router.push('/login');
             return
         }
-    }, [])
+    }, [router])
 
     return (
         <div>
