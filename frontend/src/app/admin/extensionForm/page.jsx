@@ -67,8 +67,8 @@ const DocumenForm = () => {
     return (
         <>
             <div className='  '>
-                <div className='py-10 w-full flex justify-center items-center'>
-                    <div className='border shadow-md rounded-xl w-1/3 flex justify-center items-center py-16 px-16'>
+                <div className='py-10 flex justify-center items-center'>
+                    <div className='border shadow-md rounded-xl mx-5 flex justify-center items-center py-16 px-10 md:px-16 '>
                         <form onSubmit={documenForms.handleSubmit}>
                             <h2 className='pb-10 text-lg text-white'>Documentation Form</h2>
                             <div className='flex items-center pl-4 mb-3 bg-white rounded-full'>
