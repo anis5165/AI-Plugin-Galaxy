@@ -9,7 +9,7 @@ const Sidebar = () => {
   const handleToggle = () => setActive(!active);
 
   return (
-    <div className="relative ">
+    <div className="relative">
       {/* Hamburger Button */}
       <button
         className="p-3 rounded lg:hidden ml-auto outline-none"
@@ -20,7 +20,7 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed inset-0 z-50 w-56 bg-neutral-900 bg-transparent text-white transform transition-transform duration-300 ease-in-out ${active ? "translate-x-0" : "-translate-x-80"
+        className={`fixed inset-0 z-50 w-56 bg-[#0A0A0A] text-white transform transition-transform duration-300 ease-in-out ${active ? "translate-x-0" : "-translate-x-80"
           } lg:translate-x-0`}
       >
         {/* Sidebar Header */}
