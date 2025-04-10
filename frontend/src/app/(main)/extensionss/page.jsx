@@ -56,7 +56,7 @@ const Documentation = () => {
                 </div>
 
                 {/* Search Bar */}
-                <div className="flex flex-cols gap-3 justify-center items-center mb-16">
+                <div className="flex flex-cols gap-3 justify-center mx-3 items-center mb-16">
                     <input
                         type="search"
                         id="exten"
