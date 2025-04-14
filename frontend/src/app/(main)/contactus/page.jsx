@@ -29,7 +29,6 @@ const ContactUs = () => {
                 .then(() => {
                     resetForm();
                     toast.success('Message sent successfully!');
-                    router.push('/login');
                 })
                 .catch(() => {
                     toast.error('Failed to send message.');
